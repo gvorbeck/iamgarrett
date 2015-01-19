@@ -1,0 +1,35 @@
+/*!
+Theme Name: Iamgarrett
+Theme URI: 
+Author: Garrett Vorbeck
+Author URI: http://iamgarrett.com
+Description: Theme for my home site
+Version: 1.0
+License: MIT 2014
+License URI: http://opensource.org/licenses/MIT
+Tags: gray, cream, blue, one column, flexible-width, responsive, sortable
+Text Domain: iamgarrett
+
+This theme is licensed under the MIT license.
+*/
+
+// Compass
+@import "compass/css3";
+@import "susy";
+@import "breakpoint";
+@import "partials/grids";
+
+
+// Reset
+@import "partials/reset";
+
+// Modules and Variables
+@import "partials/base";
+
+// Partials
+@import "partials/header";
+@import "partials/post";
+@import "partials/albums";
+@import "partials/resume";
+@import "partials/sites";
+@import "partials/footer";

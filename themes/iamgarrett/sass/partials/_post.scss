@@ -1,0 +1,194 @@
+article {
+  background: white;
+  border-bottom: .3125rem solid $color-gray-lighter;
+  margin: 0 auto;
+  
+  .home & {
+    margin-bottom: span(1);
+    max-width: 29.6875rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  
+    @include breakpoint( 57.8125rem ( $breakpoint-2 - .0625rem ) ) {
+      max-width: 50rem;
+      overflow: hidden;
+      
+      & header {
+        float: left;
+        max-width: 29.6875rem;
+      }
+      
+      & footer {
+        float: left;
+      }
+    }
+    
+    @include breakpoint( $breakpoint-2 ) {
+      
+      &:nth-child(even) {
+        float: right;
+        clear: right;
+      }
+      
+      &:nth-child(odd) {
+        float: left;
+        clear: left;
+      }
+      
+      &:nth-child(2n+1) {
+        clear: both;
+      }
+    }
+  }
+  
+  .single & {
+    max-width: 62.5rem;
+  }
+  
+  .page & {
+    max-width: 62.5rem;
+    
+    time {
+      display: none;
+    }
+  }
+  
+  header {
+    position: relative;
+    
+    > * {
+      padding: 0 gutter();
+    }
+    
+    h1 {
+      font-family: $font-title-bold;
+      font-size: $font-size-7;
+      position: absolute;
+      left: 0;
+      background: $color-yellow;
+      padding: gutter();
+      top: 0;
+      
+      a {
+        color: $color-gray-dark;
+        
+        &:hover {
+          border-bottom: none;
+        }
+      }
+    }
+    
+    time {
+      color: $color-gray-lighter;
+    }
+  }
+  
+  footer {
+    padding: 0 gutter() gutter();
+    font-size: $font-size-4;
+    
+    a {
+      color: $color-red;
+      font-family: $font-text-bold;
+      
+      &:hover {
+        border-bottom: .0625rem dashed $color-red;
+      }
+    }
+  }
+}
+
+.wp-post-image-link {
+  padding: 0;
+}
+
+.wp-post-image {
+  width: 100%;
+  height: auto;
+  max-width: 34.375rem;
+  
+  .single .hentry &,
+  .page .hentry & {
+    max-width: 62.5rem;
+    padding: 0;
+  }
+}
+
+.post-edit-link {
+  color: $color-red;
+  padding: 0;
+  
+  &:hover {
+    border-bottom: .0625rem dashed $color-red;
+  }
+}
+
+.post--content {
+  padding: 0 gutter();
+  overflow: hidden;
+  
+  .album-list {
+    list-style-type: none;
+    clear: both;
+  }
+  
+  //WYSIWYG Styles
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+  
+  ol {
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
+  }
+  
+  strong {
+    font-family: $font-text-bold;
+  }
+  
+  em {
+    font-style: italic;
+  }
+  
+  blockquote {
+    background: $color-gray-lightest;
+    border-left: .625rem solid $color-gray-lighter;
+    margin: 1.5rem .625rem;
+    padding: 0.5rem .625rem;
+    quotes: "\201C""\201D""\2018""\2019";
+    
+    &:before {
+      color: $color-gray-lighter;
+      content: open-quote;
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.25rem;
+      vertical-align: -0.5em;
+    }
+    
+    p {
+      display: inline;
+    }
+  }
+  
+  a {
+    color: $color-red;
+    
+    &:hover {
+      border-bottom: .0625rem dashed $color-red;
+    }
+  }
+  
+  hr {
+    height: .0625rem;
+    background: $color-gray-lightest;
+  }
+  
+  .alignleft {
+    float: left;
+    margin: 0 gutter() gutter() 0;
+  }
+}

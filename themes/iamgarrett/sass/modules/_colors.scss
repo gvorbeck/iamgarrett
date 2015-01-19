@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    #COLORS
+\*------------------------------------*/
+$color-gray-light: #2e3639;
+$color-gray-lighter: #848889;
+$color-gray-lightest: #e7e7e7;
+$color-gray-dark: #1e2629;
+
+$color-yellow: #fab23a;
+$color-brown: #c3a26f;
+$color-pink: #e2bfb9;
+$color-purple: #b51659;
+$color-red: #fd2928;
+$color-orange: #fcb43e;
+/*------------------------------------*\
+    #COLOR-TRANSFORMS
+\*------------------------------------*/
+@function color--shadow($color) {
+  @return adjust-color($color, $hue: 0, $saturation: 3, $lightness: -7);
+}

@@ -1,0 +1,72 @@
+.resume--section {
+  
+  @include breakpoint( $breakpoint-1 ) {
+    border-bottom: .0625rem solid $color-gray-lightest;
+    padding-bottom: gutter();
+    overflow: hidden;
+  }
+  
+  h2 {
+    text-align: center;
+    font-family: $font-title-regular;
+    text-transform: capitalize;
+    font-size: $font-size-6;
+    color: white;
+  }
+  
+  svg {
+    width: 4.6875rem;
+    height: auto;
+    fill: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.resume--section_image {
+  padding: gutter();
+  text-align: center;
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  
+  @include breakpoint( $breakpoint-1 ) {
+    float: left;
+    margin: 0 gutter() gutter() 0;
+  }
+  
+  .resume--skills & {
+    background: $color-brown;
+  }
+  
+  .resume--work-history & {
+    background: $color-pink;
+  }
+  
+  .resume--education & {
+    background: $color-purple;
+  }
+  
+  .resume--awards & {
+    background: $color-red;
+  }
+}
+
+.resume--section_content {
+  
+  @include breakpoint( $breakpoint-1 ) {
+    overflow: hidden;
+  }
+}
+
+.resume--work-history {
+  dt {
+    font-family: $font-title-regular;
+  }
+  .description {
+    list-style-type: none;
+  }
+}

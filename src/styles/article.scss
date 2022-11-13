@@ -167,13 +167,19 @@ main {
     }
 }
 
-.text-link {
+.text-link,
+p a {
     color: vars.$red;
     font-weight: bold;
     text-decoration: underline;
     letter-spacing: 1px;
     margin-bottom: 1rem;
     display: block;
+}
+
+p a {
+    display: inline;
+    letter-spacing: 0;
 }
 
 .pic-link {

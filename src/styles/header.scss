@@ -65,10 +65,16 @@ html {
         }
 
         & + div {
-            position: absolute;
-            width: calc(100% - 1rem);
+            // position: absolute;
+            // width: calc(100% - 1rem);
             display: flex;
             justify-content: space-between;
+            gap: 1rem;
+
+            @media screen and (max-width: vars.$first-header-break) {
+                position: absolute;
+                width: calc(100% - 1rem);
+            }
         }
     }
 }

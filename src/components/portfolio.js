@@ -36,30 +36,32 @@ export default function portfolio() {
   const siteItems = sites.map((site) =>
     <li key={site.name}>
       <h2>{site.name}</h2>
-      <a
-        className='pic-link'
-        href={site.link}
-        title={site.name}
-        target='_blank'
-        rel='noreferrer'
-      >
-        <div className='browser-head'>
-          <div className='dots' />
-          <div className='url' />
-        </div>
-        <img src={site.image} alt={site.name} />
-      </a>
-      <div className='desc'>
+      <div className='site'>
         <a
-          className='text-link'
+          className='pic-link'
           href={site.link}
           title={site.name}
-          rel='noreferrer'
           target='_blank'
+          rel='noreferrer'
         >
-          {site.name}
+          <div className='browser-head'>
+            <div className='dots' />
+            <div className='url' />
+          </div>
+          <img src={site.image} alt={site.name} />
         </a>
-        <p>{site.description}</p>
+        <div className='desc'>
+          <a
+            className='text-link'
+            href={site.link}
+            title={site.name}
+            rel='noreferrer'
+            target='_blank'
+          >
+            {site.name}
+          </a>
+          <p>{site.description}</p>
+        </div>
       </div>
     </li>
   );

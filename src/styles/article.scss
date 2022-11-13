@@ -30,21 +30,40 @@ main {
     h1, h2 {
         font-family: 'Merriweather', serif;
     }
+
     h1 {
         font-size: 2.25rem;
         text-transform: capitalize;
+        margin-left: .5rem;
     }
 
-    & > div {display: flex}
+    & > div {
+        display: flex;
+    
+        @media screen and (max-width: vars.$first-header-break) {
+            flex-direction: column;
+        }
+    }
 
     aside {
         flex: 1;
         padding: 1rem;
 
+        @media screen and (max-width: vars.$first-header-break) {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem .5rem;
+        }
+
         h2 {
             font-size: 1.5rem;
             text-align: center;
             margin: .5rem 0;
+
+            @media screen and (max-width: vars.$first-header-break) {
+                margin-top: 0;
+                text-align: left;
+            }
         }
     }
 
@@ -63,6 +82,16 @@ main {
                 color: set-color($color);
             }
         }
+    }
+}
+
+.article-img {
+
+    @media screen and (max-width: vars.$first-header-break) {
+        $dimension: 15%;
+        width: $dimension;
+        height: $dimension;
+
     }
 }
 
@@ -116,10 +145,25 @@ main {
 
     & > div {
         flex-direction: row-reverse;
+
+        @media screen and (max-width: vars.$first-header-break) {
+            flex-direction: column;
+        }
     }
 
     ul {
         padding: 0;
+    }
+}
+
+.site {
+
+    @media screen and (max-width: vars.$first-header-break) {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        gap: 1rem;
+        align-items: flex-start;
     }
 }
 
@@ -141,6 +185,11 @@ main {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     line-height: 1;
 
+    @media screen and (max-width: vars.$first-header-break) {
+       flex: 4;
+       margin: 0;
+    }
+
     &::before {
         content: attr(href);
         font-size: .75rem;
@@ -149,6 +198,11 @@ main {
         z-index: 1;
         text-align: center;
         line-height: 1.25;
+
+        @media screen and (max-width: vars.$first-header-break) {
+            font-size: .5rem;
+            line-height: 1.75;
+        }
     }
 }
 
@@ -197,6 +251,11 @@ main {
 
 .desc {
     margin: 0 1rem 2rem;
+
+    @media screen and (max-width: vars.$first-header-break) {
+        flex: 6;
+        margin: 0;
+    }
 }
 
 .about-article .main {

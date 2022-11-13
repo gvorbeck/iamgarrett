@@ -1,73 +1,124 @@
 import React from 'react'
 import faceImg from '../images/face.png';
 import Article from './article';
+import {
+    ARTICLE_RESUME,
+    ARTICLE_RESUME_SUBTITLE,
+    ARTICLE_RESUME_IMG_ALT,
+    ARTICLE_RESUME_DESC,
+    ARTICLE_RESUME_SECTION_ED,
+    ARTICLE_RESUME_SECTION_HIST,
+    ARTICLE_RESUME_SECTION_SKILLS,
+    JOB_EMPLOYER,
+    JOB_TITLE,
+    JOB_DURATION,
+    JOB_LOCATION,
+    IBM_CO,
+    IBM_DESC,
+    IBM_DURATION,
+    IBM_LOCATION,
+    IBM_TITLE,
+    NBC_CO,
+    NBC_DESC,
+    NBC_DURATION,
+    NBC_LOCATION,
+    NBC_TITLE,
+    SCHOOL,
+    SCHOOL_DEGREE,
+    SCHOOL_GRAD,
+    NJCU_DEGREE,
+    NJCU_GRAD,
+    NJCU_NAME,
+    SKILL_CMS,
+    SKILL_CORE,
+    SKILL_CSS,
+    SKILL_DBS,
+    SKILL_DESIGN,
+    SKILL_LIB,
+    SKILL_METHOD,
+    SKILL_REACT,
+    SKILL_TITLE_CMS,
+    SKILL_TITLE_CORE,
+    SKILL_TITLE_CSS,
+    SKILL_TITLE_DBS,
+    SKILL_TITLE_DESIGN,
+    SKILL_TITLE_LIB,
+    SKILL_TITLE_METHOD,
+    SKILL_TITLE_REACT,
+} from '../strings';
 
 export default function resume() {
+  const jobs = [
+    {
+        employer: IBM_CO,
+        title: IBM_TITLE,
+        duration: IBM_DURATION,
+        location: IBM_LOCATION,
+        desc: IBM_DESC,
+    },
+    {
+        employer: NBC_CO,
+        title: NBC_TITLE,
+        duration: NBC_DURATION,
+        location: NBC_LOCATION,
+        desc: NBC_DESC,
+    },
+  ];
+  const jobItems = jobs.map((job) => 
+    <li>
+        <dl>
+            <dt>{JOB_EMPLOYER}</dt>
+            <dd>{job.employer}</dd>
+            <dt>{JOB_TITLE}</dt>
+            <dd>{job.title}</dd>
+            <dt>{JOB_DURATION}</dt>
+            <dd>{job.duration}</dd>
+            <dt>{JOB_LOCATION}</dt>
+            <dd>{job.location}</dd>
+        </dl>
+        <p>{job.desc}</p>
+    </li>
+  );
   return (
     <Article
-        id='resume'
-        className='resume'
-        title='Resume'
-        asideTitle='Just Garrett'
+        id={ARTICLE_RESUME}
+        className={ARTICLE_RESUME}
+        title={ARTICLE_RESUME}
+        asideTitle={ARTICLE_RESUME_SUBTITLE}
         asideImage={faceImg}
-        asideImageAlt='My Face'
-        text="I'm a front-end developer based in the NYC area with 15+ years of experience. I love to draw, eat pizza, and listen to punk music. I have smiled at every dog I have ever seen. My favorite color is brown. I have been to all 50 states."
+        asideImageAlt={ARTICLE_RESUME_IMG_ALT}
+        text={ARTICLE_RESUME_DESC}
     >
         <section className='skills'>
-            <h2>Skills</h2>
+            <h2>{ARTICLE_RESUME_SECTION_SKILLS}</h2>
             <ul>
-                <li><span>Core:</span> HTML, CSS, JavaScript, Git, JSON, XML, some Python, some PHP</li>
-                <li><span>JavaScript Libraries & Frameworks:</span> React.js, jQuery, D3, TypeScript</li>
-                <li><span>CSS:</span> Sass, Less</li>
-                <li><span>React Component Libraries:</span> Carbon, Material-UI</li>
-                <li><span>Content Management Systems:</span> WordPress, Drupal, Moveable Type</li>
-                <li><span>Database Structure:</span> MySQL, GraphQL, some SQL</li>
-                <li><span>Design:</span> Some visual design, some UX design</li>
-                <li><span>Methodologies:</span> Agile, Waterfall</li>
+                <li><span>{SKILL_TITLE_CORE}</span> {SKILL_CORE}</li>
+                <li><span>{SKILL_TITLE_LIB}</span> {SKILL_LIB}</li>
+                <li><span>{SKILL_TITLE_CSS}</span> {SKILL_TITLE_CSS}</li>
+                <li><span>{SKILL_TITLE_REACT}</span> {SKILL_LIB}</li>
+                <li><span>{SKILL_TITLE_CMS}</span> {SKILL_CMS}</li>
+                <li><span>{SKILL_TITLE_DBS}</span> {SKILL_DBS}</li>
+                <li><span>{SKILL_TITLE_DESIGN}</span> {SKILL_DESIGN}</li>
+                <li><span>{SKILL_TITLE_METHOD}</span> {SKILL_METHOD}</li>
             </ul>
         </section>
         <section className='work-history'>
-            <h2>Work History</h2>
+            <h2>{ARTICLE_RESUME_SECTION_HIST}</h2>
             <ul>
-                <li>
-                    <dl>
-                        <dt>Employer</dt>
-                        <dd>IBM</dd>
-                        <dt>Title</dt>
-                        <dd>Advisory Front End Developer / Software Engineer</dd>
-                        <dt>Duration</dt>
-                        <dd>10/2015 - Current</dd>
-                        <dt>Location</dt>
-                        <dd>New York, NY & Remote</dd>
-                    </dl>
-                    <p>As a FED within IBM's Design Team, I work with the IBM's z/OS mainframe platform to bring a modern web experience to some of the most robust systems in the industry. Whether it is updating the look and feel of their legacy systems, working to create new services, or guiding our sales teams through an ever-updating set of processes; I use my skills to ensure a modern and beautiful interraction every time.</p>
-                </li>
-                <li>
-                    <dl>
-                        <dt>Employer</dt>
-                        <dd>NBCUniversal</dd>
-                        <dt>Title</dt>
-                        <dd>Web Developer/Software Developer</dd>
-                        <dt>Duration</dt>
-                        <dd>10/2006 - 10/2015</dd>
-                        <dt>Location</dt>
-                        <dd>New York, NY</dd>
-                    </dl>
-                    <p>I worked on dozens of NBCUniversal's properties during my time there. I was fortunate to work with several teams, covering brands such as Telemundo, SyFy, USA, Bravo and more. I worked with a variety of technologies that supported millions of users. Working in a rapidly evolving field, I helped foster NBC's web development community.</p>
-                </li>
+                {jobItems}
             </ul>
         </section>
         <section className='education'>
-            <h2>Education</h2>
+            <h2>{ARTICLE_RESUME_SECTION_ED}</h2>
             <ul>
                 <li>
                     <dl>
-                        <dt>School</dt>
-                        <dd>New Jersey City University</dd>
-                        <dt>Degree</dt>
-                        <dd>Bachelor of Science in Computer Science</dd>
-                        <dt>Graduated</dt>
-                        <dd>1/2006 - 6/2010</dd>
+                        <dt>{SCHOOL}</dt>
+                        <dd>{NJCU_NAME}</dd>
+                        <dt>{SCHOOL_DEGREE}</dt>
+                        <dd>{NJCU_DEGREE}</dd>
+                        <dt>{SCHOOL_GRAD}</dt>
+                        <dd>{NJCU_GRAD}</dd>
                     </dl>
                 </li>
             </ul>

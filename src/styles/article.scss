@@ -1,8 +1,8 @@
-@use 'colors';
+@use 'vars';
 
 // Set color programmatically.
 @function set-color($color) {
-    @if $color == colors.$pink {
+    @if $color == vars.$pink {
         @return #000000;
     }
     @else {
@@ -13,6 +13,10 @@
 // Make sure fixed header doesn't overlap the top of the page's content.
 main {
     margin-top: 8.25rem;
+
+    @media screen and (max-width: vars.$first-header-break) {
+        margin-top: 0;
+    }
 }
 
 .main-article {
@@ -46,12 +50,12 @@ main {
 
     &:first-child img {
         border-radius: 50%;
-        background-color: colors.$yellow;
+        background-color: vars.$yellow;
     }
 
     // Set each aside to its own unique color.
-    @each $color in colors.$articleAside {
-        $i: index(colors.$articleAside, $color);
+    @each $color in vars.$article-aside {
+        $i: index(vars.$article-aside, $color);
         &:nth-child(#{$i}) {
 
             aside {
@@ -64,10 +68,10 @@ main {
 
 .main {
     flex: 3;
-    background-color: colors.$light;
+    background-color: vars.$light;
 
     h2 {
-        background-color: colors.$yellow;
+        background-color: vars.$yellow;
         padding: .5rem;
         font-size: 1.25rem;
     }
@@ -99,7 +103,7 @@ main {
 
 .work-history {
     li + li {
-        border-top: 2px solid colors.$dark;
+        border-top: 2px solid vars.$dark;
         padding-top: .5rem;
     }
 
@@ -120,7 +124,7 @@ main {
 }
 
 .text-link {
-    color: colors.$red;
+    color: vars.$red;
     font-weight: bold;
     text-decoration: underline;
     letter-spacing: 1px;

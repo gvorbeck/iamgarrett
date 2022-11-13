@@ -8,7 +8,9 @@ export default function header() {
   return (
     <header className='site-header'>
         <h1>{siteTitle}</h1>
-        <Nav/>
+        <div>
+          <Nav/>
+        </div>
     </header>
     
   )

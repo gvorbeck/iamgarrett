@@ -1,3 +1,4 @@
+// Color vars
 $yellow: #FAB239;
 $pink: #EFA9AE;
 $brown: #7A542E;
@@ -8,4 +9,7 @@ $light: #d6d9da;
 
 $extNav: ($brown, $pink, $purple, $red);
 
-$articleAside: ($brown, $pink, $purple);
+$article-aside: ($brown, $pink, $purple);
+
+// Media query vars
+$first-header-break: 876px;

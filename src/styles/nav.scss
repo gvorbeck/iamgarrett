@@ -1,4 +1,4 @@
-@use 'colors';
+@use 'vars';
 
 @mixin nav-list {
     display: flex;
@@ -28,10 +28,15 @@
 
     ul {
         @include nav-list;
+
+        @media screen and (max-width: vars.$first-header-break) {
+            gap: 1rem;
+            padding-bottom: .5rem;
+        }
     }
 
-    @each $color in colors.$extNav {
-        $i: index(colors.$extNav, $color);
+    @each $color in vars.$extNav {
+        $i: index(vars.$extNav, $color);
         li:nth-child(#{$i}) {
             background-color: $color;
         }
@@ -42,6 +47,12 @@
         height: $dimension;
         width: $dimension;
         padding: .5rem;
+
+        @media screen and (max-width: vars.$first-header-break) {
+            $dimension: 3rem;
+            height: $dimension;
+            width: $dimension;
+        }
     }
 
     svg {

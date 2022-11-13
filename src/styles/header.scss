@@ -1,38 +1,72 @@
-@use 'colors';
+@use 'vars';
 
 html {
     scroll-padding-top: 8.25rem;
+
+    @media screen and (max-width: vars.$first-header-break) {
+        scroll-padding-top: 0;
+    }
 }
 
 .site-header {
-    background-color: colors.$dark;
+    background-color: vars.$dark;
     color: white;
     display: flex;
-    justify-content: space-around;
-    line-height: 1.5;
+    height: 5.25rem;
+    justify-content: space-between;
+    gap: 1rem;
+    line-height: 100%;
+    align-items: center;
+    padding-left: 1rem;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    @media screen and (max-width: vars.$first-header-break) {
+        flex-direction: column;
+        padding: 1rem 0 0;
+        gap: 2rem;
+        height: auto;
+        position: static;
+    }
 
     h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-family: 'Merriweather', serif;
         position: relative;
-        z-index: 1;
+        
+        @media screen and (max-width: vars.$first-header-break) {
+            font-size: 2rem;
+            z-index: 1;
+        }
 
         &::after {
-            $dimension: 7rem;
+            $dimension: 100px;
             content: '';
-            position: absolute;
-            display: block;
             width: $dimension;
             height: $dimension;
-            background-color: colors.$yellow;
+            background-color: vars.$yellow;
             border-radius: 50%;
-            top: -1rem;
             left: calc(50% - $dimension/2);
             z-index: -1;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            position: absolute;
+            top: -35px;
+
+            @media screen and (max-width: vars.$first-header-break) {
+                $dimension: 66px;
+                width: $dimension;
+                height: $dimension;
+                left: calc(50% - $dimension/2);
+                top: -23px;
+            }
+        }
+
+        & + div {
+            display: flex;
+            gap: 1rem;
         }
     }
 }

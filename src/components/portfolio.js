@@ -23,7 +23,7 @@ export default function portfolio() {
     {
       name: 'Opinions on Music',
       image: oomScreen,
-      description: "I have for most of my life made lists of my favorite records released each year. I don't pretend to be an authority on What Is Good, but with my love of music and penchant for making lists, I built out this nifty little site to keep track of it all.",
+      description: "I have for most of my life made lists of my favorite records released each year. I don't pretend to be an authority on What Is Good, but with my love of music and penchant for making lists, I built out this nifty little site to keep track of it all. This site uses Last.fm's API to populate album artwork and is built using GitHub's Jekyll static-site builder.",
       link: 'https://music.iamgarrett.com',
     },
     {

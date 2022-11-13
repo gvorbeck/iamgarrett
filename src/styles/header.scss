@@ -26,10 +26,9 @@ html {
 
     @media screen and (max-width: vars.$first-header-break) {
         flex-direction: column;
-        padding: 1rem 0 0;
-        gap: 2rem;
-        height: auto;
+        padding: 1rem 0 0 0;
         position: static;
+
     }
 
     h1 {
@@ -40,6 +39,7 @@ html {
         @media screen and (max-width: vars.$first-header-break) {
             font-size: 2rem;
             z-index: 1;
+            padding-top: 1rem;
         }
 
         &::after {
@@ -60,13 +60,15 @@ html {
                 width: $dimension;
                 height: $dimension;
                 left: calc(50% - $dimension/2);
-                top: -23px;
+                top: -8px;
             }
         }
 
         & + div {
+            position: absolute;
+            width: calc(100% - 1rem);
             display: flex;
-            gap: 1rem;
+            justify-content: space-between;
         }
     }
 }

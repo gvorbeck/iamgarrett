@@ -1,0 +1,38 @@
+@use 'colors';
+
+html {
+    scroll-padding-top: 8.25rem;
+}
+
+.site-header {
+    background-color: colors.$dark;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    line-height: 1.5;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+
+    h1 {
+        font-size: 3.5rem;
+        font-family: 'Merriweather', serif;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            $dimension: 7rem;
+            content: '';
+            position: absolute;
+            display: block;
+            width: $dimension;
+            height: $dimension;
+            background-color: colors.$yellow;
+            border-radius: 50%;
+            top: -1rem;
+            left: calc(50% - $dimension/2);
+            z-index: -1;
+        }
+    }
+}

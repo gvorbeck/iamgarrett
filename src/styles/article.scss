@@ -1,0 +1,204 @@
+@use 'colors';
+
+// Set color programmatically.
+@function set-color($color) {
+    @if $color == colors.$pink {
+        @return #000000;
+    }
+    @else {
+        @return #ffffff;
+    }
+}
+
+// Make sure fixed header doesn't overlap the top of the page's content.
+main {
+    margin-top: 8.25rem;
+}
+
+.main-article {
+    max-width: 75rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+
+    h1, h2 {
+        font-family: 'Merriweather', serif;
+    }
+    h1 {
+        font-size: 2.25rem;
+        text-transform: capitalize;
+    }
+
+    & > div {display: flex}
+
+    aside {
+        flex: 1;
+        padding: 1rem;
+
+        h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: .5rem 0;
+        }
+    }
+
+    &:first-child img {
+        border-radius: 50%;
+        background-color: colors.$yellow;
+    }
+
+    // Set each aside to its own unique color.
+    @each $color in colors.$articleAside {
+        $i: index(colors.$articleAside, $color);
+        &:nth-child(#{$i}) {
+
+            aside {
+                background-color: $color;
+                color: set-color($color);
+            }
+        }
+    }
+}
+
+.main {
+    flex: 3;
+    background-color: colors.$light;
+
+    h2 {
+        background-color: colors.$yellow;
+        padding: .5rem;
+        font-size: 1.25rem;
+    }
+
+    ul {
+        padding: 1rem;
+    }
+
+    span {
+        font-weight: bold;
+    }
+
+    li + li,
+    dd + dt {
+        margin-top: .5rem;
+    }
+
+    dt {
+        font-weight: bold;
+    }
+}
+
+.skills {
+    ul {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+}
+
+.work-history {
+    li + li {
+        border-top: 2px solid colors.$dark;
+        padding-top: .5rem;
+    }
+
+    p {
+        margin-top: 1rem;
+    }
+}
+
+.portfolio-article {
+
+    & > div {
+        flex-direction: row-reverse;
+    }
+
+    ul {
+        padding: 0;
+    }
+}
+
+.text-link {
+    color: colors.$red;
+    font-weight: bold;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.pic-link {
+    margin: 1rem;
+    border: 0.25rem solid #E2E1E2;
+    border-radius: 5px 5px 0 0;
+    display: block;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    line-height: 1;
+
+    &::before {
+        content: attr(href);
+        font-size: .75rem;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+        line-height: 1.25;
+    }
+}
+
+.browser-head {
+    height: 1.25em;
+    background-color: #E2E1E2;
+}
+
+.dots {
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: #ff4443;
+    position: relative;
+    top: .25rem;
+    left: .3125rem;
+
+    &::before, &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+    }
+    
+    &::before {
+        background-color: #ffbe00;
+        left: 1rem;
+    }
+
+    &::after {
+        background-color: #01d545;
+        left: 2rem;
+    }
+}
+
+.url {
+    width: 50%;
+    height: 1rem;
+    background-color: #f3f3f3;
+    margin: 0 auto;
+    position: relative;
+    top: -.5rem;
+}
+
+.desc {
+    margin: 0 1rem 2rem;
+}
+
+.about-article .main {
+    padding: 1rem;
+
+    p + p {
+        margin-top: 1rem;
+    }
+}

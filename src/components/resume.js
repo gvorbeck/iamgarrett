@@ -94,7 +94,7 @@ export default function resume() {
             <ul>
                 <li><span>{SKILL_TITLE_CORE}</span> {SKILL_CORE}</li>
                 <li><span>{SKILL_TITLE_LIB}</span> {SKILL_LIB}</li>
-                <li><span>{SKILL_TITLE_CSS}</span> {SKILL_TITLE_CSS}</li>
+                <li><span>{SKILL_TITLE_CSS}</span> {SKILL_CSS}</li>
                 <li><span>{SKILL_TITLE_REACT}</span> {SKILL_LIB}</li>
                 <li><span>{SKILL_TITLE_CMS}</span> {SKILL_CMS}</li>
                 <li><span>{SKILL_TITLE_DBS}</span> {SKILL_DBS}</li>

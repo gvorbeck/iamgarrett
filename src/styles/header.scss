@@ -17,7 +17,7 @@ html {
     gap: 1rem;
     line-height: 100%;
     align-items: center;
-    padding-left: .5rem;
+    padding-left: 1rem;
     position: fixed;
     width: 100%;
     top: 0;
@@ -75,7 +75,7 @@ html {
 
             @media screen and (max-width: vars.$first-header-break) {
                 position: absolute;
-                width: calc(100% - 1rem);
+                width: calc(100% - 2rem);
             }
 
             @media screen and (max-width: vars.$second-header-break) {

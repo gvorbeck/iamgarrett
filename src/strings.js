@@ -33,19 +33,17 @@ export const ARTICLE_RESUME_SECTION_ED = 'Education';
 export const SKILL_TITLE_CORE = 'Core';
 export const SKILL_TITLE_LIB = 'JavaScript Libraries & Frameworks:';
 export const SKILL_TITLE_CSS = 'CSS:';
-export const SKILL_TITLE_REACT = 'React Component Libraries:';
 export const SKILL_TITLE_CMS = 'Content Management Systems:';
 export const SKILL_TITLE_DBS = 'Database Structure:';
-export const SKILL_TITLE_DESIGN = 'Design:';
+export const SKILL_TITLE_DESIGN = 'Design Systems:';
 export const SKILL_TITLE_METHOD = 'Methodologies:';
 
 export const SKILL_CORE = 'HTML, CSS, JavaScript, Git, JSON, XML, some Python, some PHP';
 export const SKILL_LIB = 'React.js, jQuery, D3, TypeScript';
 export const SKILL_CSS = 'Sass, Less';
-export const SKILL_REACT = 'Carbon, Material-UI';
+export const SKILL_DESIGN = 'Carbon, Material-UI';
 export const SKILL_CMS = 'WordPress, Drupal, Moveable Type';
-export const SKILL_DBS = 'MySQL, GraphQL, some SQL';
-export const SKILL_DESIGN = 'Some visual design, some UX design';
+export const SKILL_DBS = 'GraphQL, some MySQL, some SQL';
 export const SKILL_METHOD = 'Agile, Waterfall';
 
 export const JOB_EMPLOYER = 'Employer';

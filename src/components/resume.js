@@ -36,7 +36,6 @@ import {
     SKILL_DESIGN,
     SKILL_LIB,
     SKILL_METHOD,
-    SKILL_REACT,
     SKILL_TITLE_CMS,
     SKILL_TITLE_CORE,
     SKILL_TITLE_CSS,
@@ -44,7 +43,6 @@ import {
     SKILL_TITLE_DESIGN,
     SKILL_TITLE_LIB,
     SKILL_TITLE_METHOD,
-    SKILL_TITLE_REACT,
 } from '../strings';
 
 export default function resume() {
@@ -95,10 +93,9 @@ export default function resume() {
                 <li><span>{SKILL_TITLE_CORE}</span> {SKILL_CORE}</li>
                 <li><span>{SKILL_TITLE_LIB}</span> {SKILL_LIB}</li>
                 <li><span>{SKILL_TITLE_CSS}</span> {SKILL_CSS}</li>
-                <li><span>{SKILL_TITLE_REACT}</span> {SKILL_LIB}</li>
+                <li><span>{SKILL_TITLE_DESIGN}</span> {SKILL_DESIGN}</li>
                 <li><span>{SKILL_TITLE_CMS}</span> {SKILL_CMS}</li>
                 <li><span>{SKILL_TITLE_DBS}</span> {SKILL_DBS}</li>
-                <li><span>{SKILL_TITLE_DESIGN}</span> {SKILL_DESIGN}</li>
                 <li><span>{SKILL_TITLE_METHOD}</span> {SKILL_METHOD}</li>
             </ul>
         </section>

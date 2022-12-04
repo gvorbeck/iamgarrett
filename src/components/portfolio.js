@@ -79,7 +79,7 @@ export default function portfolio() {
         </a>
         <div className="desc">
           <a
-            className="text-link"
+            className="portfolio-link"
             href={site.link}
             title={site.name}
             rel="noreferrer"
@@ -87,15 +87,17 @@ export default function portfolio() {
           >
             {site.name}
           </a>
-          <a
-            className="text-link"
-            href={site.repo}
-            title={site.name}
-            rel="noreferrer"
-            target="_blank"
-          >
-            GitHub
-          </a>
+          {site.repo && (
+            <a
+              className="portfolio-link"
+              href={site.repo}
+              title={site.name}
+              rel="noreferrer"
+              target="_blank"
+            >
+              GitHub Repo
+            </a>
+          )}
           <p dangerouslySetInnerHTML={{ __html: site.description }} />
         </div>
       </div>

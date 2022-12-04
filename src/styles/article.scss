@@ -1,283 +1,281 @@
-@use 'vars';
+@use "vars";
 
 // Set color programmatically.
 @function set-color($color) {
-    @if $color == vars.$pink {
-        @return #000000;
-    }
-    @else {
-        @return #ffffff;
-    }
+  @if $color == vars.$pink {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
 }
 
 // Make sure fixed header doesn't overlap the top of the page's content.
 main {
-    margin-top: 8.25rem;
+  margin-top: 8.25rem;
 
-    @media screen and (max-width: vars.$first-header-break) {
-        margin-top: 0;
-    }
+  @media screen and (max-width: vars.$first-header-break) {
+    margin-top: 0;
+  }
 }
 
 .main-article {
-    max-width: 75rem;
-    margin: 0 auto;
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+
+  h1,
+  h2 {
+    font-family: "Merriweather", serif;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    text-transform: capitalize;
+    margin-left: 1rem;
+  }
+
+  & > div {
     display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-    margin-bottom: 3rem;
 
-    h1, h2 {
-        font-family: 'Merriweather', serif;
+    @media screen and (max-width: vars.$first-header-break) {
+      flex-direction: column;
+    }
+  }
+
+  aside {
+    flex: 1;
+    padding: 1rem;
+
+    @media screen and (max-width: vars.$first-header-break) {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
     }
 
-    h1 {
-        font-size: 2.25rem;
-        text-transform: capitalize;
-        margin-left: 1rem;
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 0.5rem 0;
+
+      @media screen and (max-width: vars.$first-header-break) {
+        margin-top: 0;
+        text-align: left;
+      }
     }
+  }
 
-    & > div {
-        display: flex;
-    
-        @media screen and (max-width: vars.$first-header-break) {
-            flex-direction: column;
-        }
+  &:first-child img {
+    border-radius: 50%;
+    background-color: vars.$yellow;
+  }
+
+  // Set each aside to its own unique color.
+  @each $color in vars.$article-aside {
+    $i: index(vars.$article-aside, $color);
+    &:nth-child(#{$i}) {
+      aside {
+        background-color: $color;
+        color: set-color($color);
+      }
     }
-
-    aside {
-        flex: 1;
-        padding: 1rem;
-
-        @media screen and (max-width: vars.$first-header-break) {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            text-align: center;
-            margin: .5rem 0;
-
-            @media screen and (max-width: vars.$first-header-break) {
-                margin-top: 0;
-                text-align: left;
-            }
-        }
-    }
-
-    &:first-child img {
-        border-radius: 50%;
-        background-color: vars.$yellow;
-    }
-
-    // Set each aside to its own unique color.
-    @each $color in vars.$article-aside {
-        $i: index(vars.$article-aside, $color);
-        &:nth-child(#{$i}) {
-
-            aside {
-                background-color: $color;
-                color: set-color($color);
-            }
-        }
-    }
+  }
 }
 
 .article-img {
-
-    @media screen and (max-width: vars.$first-header-break) {
-        $dimension: 15%;
-        width: $dimension;
-        height: $dimension;
-
-    }
+  @media screen and (max-width: vars.$first-header-break) {
+    $dimension: 15%;
+    width: $dimension;
+    height: $dimension;
+  }
 }
 
 .main {
-    flex: 3;
-    background-color: vars.$light;
+  flex: 3;
+  background-color: vars.$light;
 
-    h2 {
-        background-color: vars.$yellow;
-        padding: .5rem 1rem;
-        font-size: 1.25rem;
-    }
+  h2 {
+    background-color: vars.$yellow;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+  }
 
-    ul {
-        padding: 1rem;
-    }
+  ul {
+    padding: 1rem;
+  }
 
-    span {
-        font-weight: bold;
-    }
+  span {
+    font-weight: bold;
+  }
 
-    li + li,
-    dd + dt {
-        margin-top: .5rem;
-    }
+  li + li,
+  dd + dt {
+    margin-top: 0.5rem;
+  }
 
-    dt {
-        font-weight: bold;
-    }
+  dt {
+    font-weight: bold;
+  }
 }
 
 .skills {
-    ul {
-        list-style-type: disc;
-        list-style-position: inside;
-    }
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
 }
 
 .work-history {
-    li + li {
-        border-top: 2px solid vars.$dark;
-        padding-top: .5rem;
-    }
+  li + li {
+    border-top: 2px solid vars.$dark;
+    padding-top: 0.5rem;
+  }
 
-    p {
-        margin-top: 1rem;
-    }
+  p {
+    margin-top: 1rem;
+  }
 }
 
 .portfolio-article {
+  & > div {
+    flex-direction: row-reverse;
 
-    & > div {
-        flex-direction: row-reverse;
-
-        @media screen and (max-width: vars.$first-header-break) {
-            flex-direction: column;
-        }
+    @media screen and (max-width: vars.$first-header-break) {
+      flex-direction: column;
     }
+  }
 
-    ul {
-        padding: 0;
-    }
+  ul {
+    padding: 0;
+  }
 }
 
 .site {
+  @media screen and (max-width: vars.$first-header-break) {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: flex-start;
+  }
 
-    @media screen and (max-width: vars.$first-header-break) {
-        display: flex;
-        justify-content: space-around;
-        padding: 1rem;
-        gap: 1rem;
-        align-items: flex-start;
-    }
-
-
-    @media screen and (max-width: vars.$second-header-break) {
-        flex-direction: column; 
-        align-items: center;
-    }
+  @media screen and (max-width: vars.$second-header-break) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.text-link,
+.portfolio-link,
 p a {
-    color: vars.$red;
-    font-weight: bold;
-    text-decoration: underline;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-    display: block;
+  color: vars.$red;
+  font-weight: bold;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  //   display: block;
 }
 
 p a {
-    display: inline;
-    letter-spacing: 0;
+  //   display: inline;
+  letter-spacing: 0;
 }
 
 .pic-link {
-    margin: 1rem;
-    border: 0.25rem solid #E2E1E2;
-    border-radius: 5px 5px 0 0;
-    display: block;
-    position: relative;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    line-height: 1;
+  margin: 1rem;
+  border: 0.25rem solid #e2e1e2;
+  border-radius: 5px 5px 0 0;
+  display: block;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  line-height: 1;
+
+  @media screen and (max-width: vars.$first-header-break) {
+    flex: 4;
+    margin: 0;
+  }
+
+  @media screen and (max-width: vars.$second-header-break) {
+    width: 75%;
+  }
+
+  &::before {
+    content: attr(href);
+    font-size: 0.75rem;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    line-height: 1.25;
 
     @media screen and (max-width: vars.$first-header-break) {
-       flex: 4;
-       margin: 0;
+      font-size: 0.5rem;
+      line-height: 1.75;
     }
-
-    @media screen and (max-width: vars.$second-header-break) {
-        width: 75%;
-    }
-
-    &::before {
-        content: attr(href);
-        font-size: .75rem;
-        position: absolute;
-        width: 100%;
-        z-index: 1;
-        text-align: center;
-        line-height: 1.25;
-
-        @media screen and (max-width: vars.$first-header-break) {
-            font-size: .5rem;
-            line-height: 1.75;
-        }
-    }
+  }
 }
 
 .browser-head {
-    height: 1.25em;
-    background-color: #E2E1E2;
+  height: 1.25em;
+  background-color: #e2e1e2;
 }
 
 .dots {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: #ff4443;
+  position: relative;
+  top: 0.25rem;
+  left: 0.3125rem;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
     width: 0.5em;
     height: 0.5em;
     border-radius: 50%;
-    background-color: #ff4443;
-    position: relative;
-    top: .25rem;
-    left: .3125rem;
+  }
 
-    &::before, &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 0.5em;
-        height: 0.5em;
-        border-radius: 50%;
-    }
-    
-    &::before {
-        background-color: #ffbe00;
-        left: 1rem;
-    }
+  &::before {
+    background-color: #ffbe00;
+    left: 1rem;
+  }
 
-    &::after {
-        background-color: #01d545;
-        left: 2rem;
-    }
+  &::after {
+    background-color: #01d545;
+    left: 2rem;
+  }
 }
 
 .url {
-    width: 50%;
-    height: 1rem;
-    background-color: #f3f3f3;
-    margin: 0 auto;
-    position: relative;
-    top: -.5rem;
+  width: 50%;
+  height: 1rem;
+  background-color: #f3f3f3;
+  margin: 0 auto;
+  position: relative;
+  top: -0.5rem;
 }
 
 .desc {
-    margin: 0 1rem 2rem;
+  margin: 0 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-    @media screen and (max-width: vars.$first-header-break) {
-        flex: 6;
-        margin: 0;
-    }
+  @media screen and (max-width: vars.$first-header-break) {
+    flex: 6;
+    margin: 0;
+  }
 }
 
 .about-article .main {
-    padding: 1rem;
+  padding: 1rem;
 
-    p + p {
-        margin-top: 1rem;
-    }
+  p + p {
+    margin-top: 1rem;
+  }
 }

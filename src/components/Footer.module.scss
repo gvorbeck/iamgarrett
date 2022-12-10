@@ -1,0 +1,11 @@
+@use "../styles/vars";
+
+footer {
+  margin: 0 auto 1rem;
+  max-width: 75rem;
+  padding: 0 1rem;
+
+  @media screen and (max-width: vars.$first-header-break) {
+    margin: 0 0 1rem 0;
+  }
+}

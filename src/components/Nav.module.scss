@@ -1,0 +1,62 @@
+@use "../styles/vars";
+
+@mixin nav-list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.siteNav {
+  ul {
+    @include nav-list;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  li {
+    text-transform: capitalize;
+  }
+
+  li + li {
+    border-left: 1px solid white;
+    padding-left: 1rem;
+  }
+}
+
+.externalNav {
+  ul {
+    @include nav-list;
+
+    @media screen and (max-width: vars.$first-header-break) {
+      gap: 1rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  @each $color in vars.$extNav {
+    $i: index(vars.$extNav, $color);
+    li:nth-child(#{$i}) {
+      background-color: $color;
+    }
+  }
+
+  li {
+    $dimension: 5.25rem;
+    height: $dimension;
+    width: $dimension;
+    padding: 0.5rem;
+
+    @media screen and (max-width: vars.$first-header-break) {
+      $dimension: 3rem;
+      height: $dimension;
+      width: $dimension;
+      border-radius: 50%;
+    }
+  }
+
+  svg {
+    fill: white;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,17 +1,15 @@
-import React from 'react'
-import Nav from './nav';
-import '../styles/header.scss';
+import Nav from "./Nav";
+import styles from "./Header.module.scss";
 
-const siteTitle = 'iamgarrett';
+const siteTitle = "iamgarrett";
 
 export default function header() {
   return (
-    <header className='site-header'>
-        <h1>{siteTitle}</h1>
-        <div>
-          <Nav/>
-        </div>
+    <header className={styles.siteHeader}>
+      <h1>{siteTitle}</h1>
+      <div>
+        <Nav />
+      </div>
     </header>
-    
-  )
+  );
 }

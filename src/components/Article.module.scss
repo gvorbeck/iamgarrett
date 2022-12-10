@@ -1,4 +1,5 @@
-@use "vars";
+// @use "vars";
+@use "../styles/vars";
 
 // Set color programmatically.
 @function set-color($color) {
@@ -18,13 +19,14 @@ main {
   }
 }
 
-.main-article {
+.mainArticle {
   max-width: 75rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
   margin-bottom: 3rem;
+  position: relative;
 
   h1,
   h2 {
@@ -35,6 +37,12 @@ main {
     font-size: 2.25rem;
     text-transform: capitalize;
     margin-left: 1rem;
+  }
+
+  .resumeLink {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
   }
 
   & > div {
@@ -84,7 +92,7 @@ main {
   }
 }
 
-.article-img {
+.articleImg {
   @media screen and (max-width: vars.$first-header-break) {
     $dimension: 15%;
     width: $dimension;
@@ -127,7 +135,7 @@ main {
   }
 }
 
-.work-history {
+.workHistory {
   li + li {
     border-top: 2px solid vars.$dark;
     padding-top: 0.5rem;
@@ -138,7 +146,7 @@ main {
   }
 }
 
-.portfolio-article {
+.portfolioArticle {
   & > div {
     flex-direction: row-reverse;
 
@@ -167,22 +175,22 @@ main {
   }
 }
 
-.portfolio-link,
-p a {
+.portfolioLink,
+p a,
+.resumeLink {
   color: vars.$red;
   font-weight: bold;
   text-decoration: underline;
   letter-spacing: 1px;
   margin-bottom: 1rem;
-  //   display: block;
 }
 
-p a {
-  //   display: inline;
+p a,
+.resumeLink {
   letter-spacing: 0;
 }
 
-.pic-link {
+.picLink {
   margin: 1rem;
   border: 0.25rem solid #e2e1e2;
   border-radius: 5px 5px 0 0;
@@ -216,7 +224,7 @@ p a {
   }
 }
 
-.browser-head {
+.browserHead {
   height: 1.25em;
   background-color: #e2e1e2;
 }
@@ -272,7 +280,7 @@ p a {
   }
 }
 
-.about-article .main {
+.aboutArticle .main {
   padding: 1rem;
 
   p + p {

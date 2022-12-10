@@ -1,7 +1,6 @@
-import React from 'react';
-import Resume from './resume';
-import Portfolio from './portfolio';
-import About from './about';
+import Resume from "./Resume";
+import Portfolio from "./Portfolio";
+import About from "./About";
 
 export default function main() {
   return (
@@ -10,5 +9,5 @@ export default function main() {
       <Portfolio />
       <About />
     </main>
-  )
+  );
 }

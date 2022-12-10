@@ -1,5 +1,5 @@
-import React from "react";
-import Article from "./article";
+import Article from "./Article";
+import styles from "./Article.module.scss";
 import portfolioImg from "../images/portfolio.png";
 import gmcmScreen from "../images/gmcm-screen.png";
 import hmcScreen from "../images/hmc-screen.png";
@@ -63,23 +63,23 @@ export default function portfolio() {
   const siteItems = sites.map((site) => (
     <li key={site.name}>
       <h2>{site.name}</h2>
-      <div className="site">
+      <div className={styles.site}>
         <a
-          className="pic-link"
+          className={styles.picLink}
           href={site.link}
           title={site.name}
           target="_blank"
           rel="noreferrer"
         >
-          <div className="browser-head">
-            <div className="dots" />
-            <div className="url" />
+          <div className={styles.browserHead}>
+            <div className={styles.dots} />
+            <div className={styles.url} />
           </div>
           <img src={site.image} alt={site.name} />
         </a>
-        <div className="desc">
+        <div className={styles.desc}>
           <a
-            className="portfolio-link"
+            className={styles.portfolioLink}
             href={site.link}
             title={site.name}
             rel="noreferrer"
@@ -89,7 +89,7 @@ export default function portfolio() {
           </a>
           {site.repo && (
             <a
-              className="portfolio-link"
+              className={styles.portfolioLink}
               href={site.repo}
               title={site.name}
               rel="noreferrer"
@@ -109,10 +109,12 @@ export default function portfolio() {
       id={ARTICLE_PORTFOLIO}
       className={ARTICLE_PORTFOLIO}
       title={ARTICLE_PORTFOLIO}
-      asideTitle={ARTICLE_PORTFOLIO_SUBTITLE}
-      asideImage={portfolioImg}
-      asideImageAlt={ARTICLE_PORTFOLIO_IMG_ALT}
-      text={ARTICLE_PORTFOLIO_DESC}
+      aside={{
+        title: ARTICLE_PORTFOLIO_SUBTITLE,
+        image: portfolioImg,
+        imageAlt: ARTICLE_PORTFOLIO_IMG_ALT,
+        text: ARTICLE_PORTFOLIO_DESC,
+      }}
     >
       <ul>{siteItems}</ul>
     </Article>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.22b0ddc0.css",
-    "main.js": "/static/js/main.727160cc.js",
+    "main.css": "/static/css/main.3feb76dd.css",
+    "main.js": "/static/js/main.5f063587.js",
     "static/js/787.cbd02a3b.chunk.js": "/static/js/787.cbd02a3b.chunk.js",
     "static/media/kg-screen.png": "/static/media/kg-screen.dcc3813e66138cdbbe82.png",
     "static/media/oom-screen.png": "/static/media/oom-screen.70d388cacc6f2742585d.png",
@@ -9,6 +9,7 @@
     "static/media/hmc-screen.png": "/static/media/hmc-screen.0996a3f15062fa6ec06c.png",
     "static/media/cpg-screen.png": "/static/media/cpg-screen.1dcf90e6a6316f9042dd.png",
     "static/media/face.png": "/static/media/face.72bbe0c76cde1d93593c.png",
+    "static/media/JOSEPH_GARRETT_VORBECK.pdf": "/static/media/JOSEPH_GARRETT_VORBECK.d8e8d1949e1488fb549c.pdf",
     "static/media/info.png": "/static/media/info.498dfb461f7f047b4c9d.png",
     "static/media/portfolio.png": "/static/media/portfolio.d2bf983678522acefe79.png",
     "static/media/github.svg": "/static/media/github.b6f9f7fbdd4195a0de52e1952e0ab795.svg",
@@ -16,12 +17,12 @@
     "static/media/lastfm.svg": "/static/media/lastfm.6875459d10382299289bd39c5b4e2334.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.3b2b94b7b4837cee3c482d55eb8e51f6.svg",
     "static/media/mail.svg": "/static/media/mail.d1b1978899b5325fe962777ae80728b4.svg",
-    "main.22b0ddc0.css.map": "/static/css/main.22b0ddc0.css.map",
-    "main.727160cc.js.map": "/static/js/main.727160cc.js.map",
+    "main.3feb76dd.css.map": "/static/css/main.3feb76dd.css.map",
+    "main.5f063587.js.map": "/static/js/main.5f063587.js.map",
     "787.cbd02a3b.chunk.js.map": "/static/js/787.cbd02a3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22b0ddc0.css",
-    "static/js/main.727160cc.js"
+    "static/css/main.3feb76dd.css",
+    "static/js/main.5f063587.js"
   ]
 }

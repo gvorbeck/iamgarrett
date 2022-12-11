@@ -2,7 +2,6 @@ import Aside from "./Aside";
 import styles from "./Article.module.scss";
 
 export default function Article(props) {
-  // const articleClassName = styles[`${props.className}Article`] ?? "";
   return (
     <article
       id={props.id}

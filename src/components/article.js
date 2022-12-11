@@ -2,10 +2,13 @@ import Aside from "./Aside";
 import styles from "./Article.module.scss";
 
 export default function Article(props) {
+  // const articleClassName = styles[`${props.className}Article`] ?? "";
   return (
     <article
       id={props.id}
-      className={`${styles.mainArticle} ${styles[`${props.className}Article`]}`}
+      className={`${styles.mainArticle} ${
+        styles[`${props.className}Article`] ?? ""
+      }`}
     >
       <h1>{props.title}</h1>
       {props.fileLink && (

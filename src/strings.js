@@ -38,7 +38,7 @@ export const ARTICLE_RESUME_SECTION_SKILLS = "Skills";
 export const ARTICLE_RESUME_SECTION_HIST = "Work History";
 export const ARTICLE_RESUME_SECTION_ED = "Education";
 
-export const SKILL_TITLE_CORE = "Core";
+export const SKILL_TITLE_CORE = "Core:";
 export const SKILL_TITLE_LIB = "JavaScript Libraries & Frameworks:";
 export const SKILL_TITLE_CSS = "CSS:";
 export const SKILL_TITLE_CMS = "Content Management Systems:";

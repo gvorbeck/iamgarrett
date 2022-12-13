@@ -1,4 +1,4 @@
-import faceImg from "../images/face.png";
+import faceImg from "../images/gface.png";
 import resumePDF from "../files/JOSEPH_GARRETT_VORBECK.pdf";
 import Article from "./Article";
 import styles from "./Article.module.scss";

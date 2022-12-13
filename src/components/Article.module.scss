@@ -75,10 +75,10 @@ main {
     }
   }
 
-  &:first-child img {
-    border-radius: 50%;
-    background-color: vars.$yellow;
-  }
+  // &:first-child img {
+  //   border-radius: 50%;
+  //   background-color: vars.$yellow;
+  // }
 
   // Set each aside to its own unique color.
   @each $color in vars.$article-aside {

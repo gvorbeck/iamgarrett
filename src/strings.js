@@ -62,7 +62,7 @@ export const JOB_LOCATION = "Location";
 
 export const IBM_CO = "IBM";
 export const IBM_TITLE = "Advisory Front End Developer / Software Engineer";
-export const IBM_DURATION = "10/2015 - Current";
+export const IBM_DURATION = "10/2015 - 01/2023";
 export const IBM_LOCATION = "New York, NY & Remote";
 export const IBM_DESC =
   "As a FED within IBM's Design Team, I work with the IBM's z/OS mainframe platform to bring a modern web experience to some of the most robust systems in the industry. Whether it is updating the look and feel of their legacy systems, working to create new services, or guiding our sales teams through an ever-updating set of processes; I use my skills to ensure a modern and beautiful interaction every time.";

@@ -14,6 +14,11 @@ import {
   JOB_TITLE,
   JOB_DURATION,
   JOB_LOCATION,
+  LAB_CO,
+  LAB_DESC,
+  LAB_DURATION,
+  LAB_LOCATION,
+  LAB_TITLE,
   IBM_CO,
   IBM_DESC,
   IBM_DURATION,
@@ -48,6 +53,13 @@ import {
 
 export default function resume() {
   const jobs = [
+    {
+      employer: LAB_CO,
+      title: LAB_TITLE,
+      duration: LAB_DURATION,
+      location: LAB_LOCATION,
+      desc: LAB_DESC,
+    },
     {
       employer: IBM_CO,
       title: IBM_TITLE,

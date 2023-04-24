@@ -60,19 +60,26 @@ export const JOB_TITLE = "Title";
 export const JOB_DURATION = "Duration";
 export const JOB_LOCATION = "Location";
 
+export const LAB_CO = "Lab49";
+export const LAB_TITLE = "Senior Web UI Developer";
+export const LAB_DURATION = "04/2023 - current";
+export const LAB_LOCATION = "New York, NY";
+export const LAB_DESC =
+  "As a Senior Web UI Developer at Lab49, I am responsible for developing and implementing user interfaces for our clients in the financial industry. In this role, I work closely with clients, project managers, and other team members to understand their requirements and translate them into functional and visually appealing web interfaces.";
+
 export const IBM_CO = "IBM";
 export const IBM_TITLE = "Advisory Front End Developer / Software Engineer";
 export const IBM_DURATION = "10/2015 - 01/2023";
 export const IBM_LOCATION = "New York, NY & Remote";
 export const IBM_DESC =
-  "As a FED within IBM's Design Team, I worked with the IBM's z/OS mainframe platform to bring a modern web experience to some of the most robust systems in the industry. Whether it was updating the look and feel of their legacy systems, working to create new services, or guiding sales teams through an ever-updating set of processes; I used my skills to ensure a modern and beautiful interaction every time.";
+  "In this role, I worked as a Front End Developer within IBM's Z Design business unit. I worked with the IBM z/OS mainframe platform to bring a modern web experience to some of the most robust mainframe systems in the industry. Whether it was updating the look and feel of their legacy systems, working to create new services, or guiding teams through an ever-updating set of processes; I used my skills to ensure a modern and beautiful interaction every time.";
 
 export const NBC_CO = "NBCUniversal";
 export const NBC_TITLE = "Web Developer/Software Developer";
 export const NBC_DURATION = "10/2006 - 10/2015";
 export const NBC_LOCATION = "New York, NY";
 export const NBC_DESC =
-  "I worked on dozens of NBCUniversal's properties during my time there. I was fortunate to work with several teams, covering brands such as Telemundo, SyFy, USA, Bravo and more. I worked with a variety of technologies that supported millions of users. Working in a rapidly evolving field, I helped foster NBC's web development community.";
+  "In this role, I worked on dozens of NBCUniversal's properties during my time there. I was fortunate to work with several teams, covering brands such as Telemundo, SyFy, USA, Bravo and more. I worked with a variety of technologies that supported millions of users. Working in a rapidly evolving field, I helped foster NBC's web development community.";
 
 export const SCHOOL = "School";
 export const SCHOOL_DEGREE = "Degree";

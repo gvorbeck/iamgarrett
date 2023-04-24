@@ -23,7 +23,7 @@ import {
   ARTICLE_PORTFOLIO_IMG_ALT,
 } from "../strings";
 
-export default function portfolio() {
+export default function Portfolio() {
   const sites = [
     {
       name: SITE_GMCM,

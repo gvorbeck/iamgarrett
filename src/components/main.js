@@ -2,7 +2,7 @@ import Resume from "./Resume";
 import Portfolio from "./Portfolio";
 import About from "./About";
 
-export default function main() {
+export default function Main() {
   return (
     <main>
       <Resume />

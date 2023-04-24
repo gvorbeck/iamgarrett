@@ -51,7 +51,7 @@ import {
   SKILL_TITLE_METHOD,
 } from "../strings";
 
-export default function resume() {
+export default function Resume() {
   const jobs = [
     {
       employer: LAB_CO,

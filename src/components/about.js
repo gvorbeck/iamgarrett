@@ -8,7 +8,7 @@ import {
   ARTICLE_ABOUT_CONTENT,
 } from "../strings";
 
-export default function about() {
+export default function About() {
   return (
     <Article
       id={ARTICLE_ABOUT}

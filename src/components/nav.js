@@ -4,7 +4,7 @@ import { ReactComponent as LastfmImg } from "../images/lastfm.svg";
 import { ReactComponent as LinkedinImg } from "../images/linkedin.svg";
 import { ReactComponent as MailImg } from "../images/mail.svg";
 
-export default function nav() {
+export default function Nav() {
   // Give site navigation a smooth scroll
   const handleClick = function (event, section) {
     event.preventDefault();

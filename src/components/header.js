@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 
 const siteTitle = "iamgarrett";
 
-export default function header() {
+export default function Header() {
   return (
     <header className={styles.siteHeader}>
       <h1>{siteTitle}</h1>

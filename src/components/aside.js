@@ -1,6 +1,6 @@
 import styles from "./Article.module.scss";
 
-export default function aside(props) {
+export default function Aside(props) {
   return (
     <aside>
       <img

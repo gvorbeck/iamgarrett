@@ -1,16 +1,19 @@
 export const SITE_GMCM = "GMCM";
 export const SITE_HMC = "IBM HMC Mobile";
 export const SITE_OOM = "Opinions on Music";
-export const SITE_CPZ = "Container Pricing for IBM Z";
+// export const SITE_CPZ = "Container Pricing for IBM Z";
 export const SITE_KG = "Krishanti and Garrett";
+export const SITE_CQ = "CODEX.QUEST";
 
 export const PORTFOLIO_GMCM = `Being a bit of a nerd at heart with a love for Dungeons & Dragons, it would be a missed opportunity to not find some way of using React.js, Gatsby, Material-UI, along with Sass to create a tool that would allow me to be the best Dungeon Master my players could ask for. Enter the Game Master's Campaign Manager (GMCM). This tool allows me to keep maps, notes, ands characters organized as well as a catalog of monsters and spells that I can dynamically throw into combat tracked all within the same tool. I really want to find time to come back to this project and add more features as it is a bit of a passion project for me.`;
 export const PORTFOLIO_HMC =
   "When IBM's HMC platform released a new app meant to help system admins manage their Z machines remotely, we needed to get the word out about all this app could do for them. Here, users can learn that they no longer need to be tied to their desks in order to manage these vast systems.";
 export const PORTFOLIO_OOM =
   "I have for most of my life made lists of my favorite records released each year. I don't pretend to be an authority on What Is Good, but with my love of music and penchant for making lists, I built out this nifty little site to keep track of it all. This site uses Last.fm's API to populate album artwork and is built using <a href='https://jekyllrb.com/' title='Jekyll' rel='norefferer' target='_blank'>GitHub's Jekyll static-site builder</a>.";
-export const PORTFOLIO_CPZ =
-  "This site is built out as a guide for IBM sales teams trying to set up clients on IBM Z's container pricing products. The process is complex, ever-changing, and resources were spread between several locations, so we created a guide that lists everything out and links to everything their teams would need in order to complete the process as seamlessly as possible! NOTE: This linked version is sanitized of any proprietary content.";
+// export const PORTFOLIO_CPZ =
+//   "This site is built out as a guide for IBM sales teams trying to set up clients on IBM Z's container pricing products. The process is complex, ever-changing, and resources were spread between several locations, so we created a guide that lists everything out and links to everything their teams would need in order to complete the process as seamlessly as possible! NOTE: This linked version is sanitized of any proprietary content.";
+export const PORTFOLIO_CQ =
+  "Codex Quest is a platform specifically designed to streamline character creation and management for the Basic Fantasy Role-Playing Game (BFRPG). By leveraging intuitive design and user-friendly interfaces, Codex Quest simplifies the often complex task of character creation, allowing players to immerse themselves in the game quickly and easily. Built as a React application with TypeScript and Tailwind CSS.";
 export const PORTFOLIO_KG =
   "When I got engaged, it probably would have been a lot easier just to use one of those wedding website generators, but being a web developer how could I excuse not building our own? Not content to make life easier, I took my first stab at using React to build a beautiful website for my then-fiancée.";
 
@@ -32,7 +35,7 @@ export const ARTICLE_ABOUT_CONTENT =
 
 export const ARTICLE_RESUME_SUBTITLE = "Just Garrett";
 export const ARTICLE_RESUME_DESC =
-  "I'm a front-end developer based in the NYC area with 15+ years of experience. I love to draw, eat pizza, and listen to punk music. I have smiled at every dog I have ever seen. My favorite color is brown. I have been to all 50 states.";
+  "I'm a web developer based in the NYC area with 15+ years of experience. I love to draw, eat pizza, and listen to bad music. I have a dog named Poori. My favorite color is brown. I have been to all 50 states.";
 export const ARTICLE_RESUME_IMG_ALT = "My Cartoon Face";
 export const ARTICLE_RESUME_SECTION_SKILLS = "Skills";
 export const ARTICLE_RESUME_SECTION_HIST = "Work History";

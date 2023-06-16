@@ -4,19 +4,19 @@ import portfolioImg from "../images/portfolio.png";
 import gmcmScreen from "../images/gmcm-screen.png";
 import hmcScreen from "../images/hmc-screen.png";
 import oomScreen from "../images/oom-screen.png";
-import cpgScreen from "../images/cpg-screen.png";
+import cqScreen from "../images/cq-screen.png";
 import kgScreen from "../images/kg-screen.png";
 import {
   PORTFOLIO_GMCM,
   PORTFOLIO_HMC,
   PORTFOLIO_OOM,
-  PORTFOLIO_CPZ,
   PORTFOLIO_KG,
-  SITE_CPZ,
+  PORTFOLIO_CQ,
   SITE_GMCM,
   SITE_HMC,
   SITE_OOM,
   SITE_KG,
+  SITE_CQ,
   ARTICLE_PORTFOLIO,
   ARTICLE_PORTFOLIO_SUBTITLE,
   ARTICLE_PORTFOLIO_DESC,
@@ -25,6 +25,13 @@ import {
 
 export default function portfolio() {
   const sites = [
+    {
+      name: SITE_CQ,
+      image: cqScreen,
+      description: PORTFOLIO_CQ,
+      link: "https://codex.quest",
+      repo: "https://github.com/gvorbeck/codex-quest",
+    },
     {
       name: SITE_GMCM,
       image: gmcmScreen,
@@ -52,13 +59,13 @@ export default function portfolio() {
       link: "https://krishantiandgarrett.com",
       repo: "https://github.com/gvorbeck/wedding",
     },
-    {
-      name: SITE_CPZ,
-      image: cpgScreen,
-      description: PORTFOLIO_CPZ,
-      link: "https://gvorbeck.github.io/container-pricing/",
-      repo: "https://github.com/gvorbeck/container-pricing",
-    },
+    // {
+    //   name: SITE_CPZ,
+    //   image: cpgScreen,
+    //   description: PORTFOLIO_CPZ,
+    //   link: "https://gvorbeck.github.io/container-pricing/",
+    //   repo: "https://github.com/gvorbeck/container-pricing",
+    // },
   ];
   const siteItems = sites.map((site) => (
     <li key={site.name}>

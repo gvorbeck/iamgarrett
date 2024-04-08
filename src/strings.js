@@ -49,12 +49,11 @@ export const SKILL_TITLE_DBS = "Database Structure:";
 export const SKILL_TITLE_DESIGN = "Design Systems:";
 export const SKILL_TITLE_METHOD = "Methodologies:";
 
-export const SKILL_CORE =
-  "HTML, CSS, JavaScript, Git, JSON, XML, some Python, some PHP";
-export const SKILL_LIB = "React.js, Angular, jQuery, D3, TypeScript";
+export const SKILL_CORE = "HTML, CSS, JavaScript, Git, JSON, XML, some PHP";
+export const SKILL_LIB = "React, Vue.js, jQuery, D3, TypeScript, Redux";
 export const SKILL_CSS = "Sass, Less, Emotion, Tailwind";
-export const SKILL_DESIGN = "Carbon, MUI (Material-UI)";
-export const SKILL_CMS = "WordPress, Drupal, Moveable Type";
+export const SKILL_DESIGN = "Carbon, MUI (Material-UI), Ant Design";
+export const SKILL_CMS = "WordPress, Drupal";
 export const SKILL_DBS = "GraphQL, some MySQL, some SQL";
 export const SKILL_METHOD = "Agile, Waterfall";
 

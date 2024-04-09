@@ -1,18 +1,18 @@
 import Article from "./Article";
 import styles from "./Article.module.scss";
 import portfolioImg from "../images/portfolio.png";
-import gmcmScreen from "../images/gmcm-screen.png";
+import poScreen from "../images/po-screen.png";
 import hmcScreen from "../images/hmc-screen.png";
 import oomScreen from "../images/oom-screen.png";
 import cqScreen from "../images/cq-screen.png";
 import kgScreen from "../images/kg-screen.png";
 import {
-  PORTFOLIO_GMCM,
+  PORTFOLIO_PO,
   PORTFOLIO_HMC,
   PORTFOLIO_OOM,
   PORTFOLIO_KG,
   PORTFOLIO_CQ,
-  SITE_GMCM,
+  SITE_PO,
   SITE_HMC,
   SITE_OOM,
   SITE_KG,
@@ -33,11 +33,11 @@ export default function Portfolio() {
       repo: "https://github.com/gvorbeck/codex-quest",
     },
     {
-      name: SITE_GMCM,
-      image: gmcmScreen,
-      description: PORTFOLIO_GMCM,
-      link: "https://game-master-campaign-manager.github.io/",
-      repo: "https://github.com/game-master-campaign-manager/gatsby-theme-gmcm",
+      name: SITE_PO,
+      image: poScreen,
+      description: PORTFOLIO_PO,
+      // link: "https://game-master-campaign-manager.github.io/",
+      // repo: "https://github.com/game-master-campaign-manager/gatsby-theme-gmcm",
     },
     {
       name: SITE_HMC,

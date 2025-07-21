@@ -1,55 +1,67 @@
-/* color palette inspired by the original site with modern dark mode */
+/* ================================
+   COLOR PALETTE
+   ================================ */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  /* Base Colors */
+  --white: #ffffff;
+  --white-soft: #f8f8f8;
+  --black: #0a0a0a;
+  --black-soft: #1a1a1a;
 
-  --vt-c-black: #0a0a0a;
-  --vt-c-black-soft: #1a1a1a;
-  --vt-c-black-mute: #242424;
+  /* Your Brand Yellow */
+  --yellow: #fab239;
+  --yellow-soft: #fbc561;
+  --yellow-muted: #fdd789;
+  --yellow-dark: #e89f20;
 
-  --vt-c-dark-bg: #0f0f0f;
-  --vt-c-dark-surface: #1a1a1a;
-  --vt-c-dark-surface-soft: #242424;
+  /* Header Navy Colors */
+  --navy: #2c3e50;
+  --navy-light: #34495e;
 
-  --vt-c-yellow: #fab239;
-  --vt-c-yellow-soft: #fbc561;
-  --vt-c-yellow-muted: #fdd789;
-  --vt-c-yellow-dark: #e89f20;
+  /* Gray Scale */
+  --gray-light: #e0e0e0;
+  --gray: #bdbdbd;
+  --gray-dark: #757575;
 
-  --vt-c-gray-light: #e0e0e0;
-  --vt-c-gray: #bdbdbd;
-  --vt-c-gray-dark: #757575;
-
-  --vt-c-divider-light-1: rgba(255, 255, 255, 0.1);
-  --vt-c-divider-light-2: rgba(255, 255, 255, 0.05);
-  --vt-c-divider-dark-1: rgba(255, 255, 255, 0.15);
-  --vt-c-divider-dark-2: rgba(255, 255, 255, 0.08);
-
-  --vt-c-text-light-1: var(--vt-c-gray-light);
-  --vt-c-text-light-2: var(--vt-c-gray);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: var(--vt-c-gray-light);
+  /* Additional UI Colors */
+  --blue: #3498db;
+  --blue-dark: #2980b9;
+  --red: #e74c3c;
+  --green: #27ae60;
+  --orange: #f39c12;
+  --purple: #9b59b6;
+  --purple-dark: #8e44ad;
 }
 
-/* semantic color variables for dark mode theme */
+/* ================================
+   SEMANTIC COLOR VARIABLES
+   ================================ */
 :root {
-  --color-background: var(--vt-c-dark-bg);
-  --color-background-soft: var(--vt-c-dark-surface);
-  --color-background-mute: var(--vt-c-dark-surface-soft);
+  /* Backgrounds */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--white-soft);
+  --bg-header: var(--navy);
+  --bg-header-scrolled: var(--navy-light);
 
-  --color-border: var(--vt-c-divider-dark-2);
-  --color-border-hover: var(--vt-c-divider-dark-1);
+  /* Text Colors */
+  --text-primary: var(--black-soft);
+  --text-secondary: var(--gray-dark);
+  --text-heading: var(--navy);
+  --text-inverse: var(--white);
 
-  --color-heading: var(--vt-c-white);
-  --color-text: var(--vt-c-text-dark-2);
-  --color-accent: var(--vt-c-yellow);
-  --color-accent-soft: var(--vt-c-yellow-soft);
-  --color-accent-hover: var(--vt-c-yellow-muted);
+  /* Accent & Interactive */
+  --accent-primary: var(--yellow);
+  --accent-secondary: var(--yellow-soft);
+  --accent-hover: var(--yellow-muted);
 
-  --section-gap: 160px;
+  /* Borders */
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-medium: rgba(0, 0, 0, 0.2);
 }
 
+/* ================================
+   GLOBAL STYLES
+   ================================ */
 *,
 *::before,
 *::after {
@@ -60,11 +72,11 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--text-primary);
+  background: var(--bg-primary);
   transition:
-    color 0.5s,
-    background-color 0.5s;
+    color 0.3s ease,
+    background-color 0.3s ease;
   line-height: 1.6;
   font-family:
     Inter,
@@ -83,7 +95,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 80px; /* Account for fixed header */
+  padding-top: 84px; /* Account for fixed header (80px + 4px border) */
 }
 
 #app {

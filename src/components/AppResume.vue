@@ -1,20 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppAside from './AppAside.vue'
+import { asideResume } from '@/data/asides'
+</script>
 
 <template>
   <div id="resume">
-    <aside class="sidebar">
-      <div class="profile-card">
-        <img class="profile-image" alt="My Cartoon Face" src="/images/face.webp" />
-        <div class="profile-info">
-          <h2>Just Garrett</h2>
-          <p>
-            I'm a web developer based in the NYC area with 15+ years of experience. I love to draw,
-            eat pizza, and listen to bad music. I have a dog named Poori. My favorite color is
-            brown. I have been to all 50 states.
-          </p>
-        </div>
-      </div>
-    </aside>
+    <AppAside :aside="asideResume" />
 
     <section class="main-content">
       <section class="skills-section">
@@ -133,48 +124,7 @@
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 2rem;
-  color: var(--color-text);
-}
-
-/* Sidebar Styles */
-.sidebar {
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  height: fit-content;
-  position: sticky;
-  top: 100px;
-}
-
-.profile-card {
-  padding: 0;
-}
-
-.profile-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-
-.profile-info {
-  padding: 2rem;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-}
-
-.profile-info h2 {
-  font-size: 1.8rem;
-  font-weight: 900;
-  margin: 0 0 1rem 0;
-  text-transform: lowercase;
-}
-
-.profile-info p {
-  line-height: 1.6;
-  margin: 0;
-  font-size: 0.95rem;
+  color: var(--text-primary);
 }
 
 /* Main Content Styles */
@@ -188,16 +138,16 @@
   font-size: 2rem;
   font-weight: 900;
   margin: 0 0 1.5rem 0;
-  color: #2c3e50;
+  color: var(--text-heading);
   text-transform: lowercase;
-  border-bottom: 4px solid var(--color-accent);
+  border-bottom: 4px solid var(--accent-primary);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
 /* Skills Section */
 .skills-section {
-  background: #ffffff;
+  background: var(--white);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -215,31 +165,31 @@
   background: #ecf0f1;
   padding: 1rem;
   border-radius: 6px;
-  border-left: 4px solid #e74c3c;
+  border-left: 4px solid var(--red);
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 .skills-list li:nth-child(2n) {
-  border-left-color: #f39c12;
+  border-left-color: var(--orange);
 }
 
 .skills-list li:nth-child(3n) {
-  border-left-color: #27ae60;
+  border-left-color: var(--green);
 }
 
 .skills-list li:nth-child(4n) {
-  border-left-color: #9b59b6;
+  border-left-color: var(--purple);
 }
 
 .skill-category {
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--text-heading);
 }
 
 /* Work History Section */
 .work-history-section {
-  background: #ffffff;
+  background: var(--white);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -257,20 +207,20 @@
   background: #f8f9fa;
   padding: 1.5rem;
   border-radius: 8px;
-  border-top: 4px solid #3498db;
+  border-top: 4px solid var(--blue);
   transition: transform 0.2s ease;
 }
 
 .work-item:nth-child(2) {
-  border-top-color: #e74c3c;
+  border-top-color: var(--red);
 }
 
 .work-item:nth-child(3) {
-  border-top-color: #f39c12;
+  border-top-color: var(--orange);
 }
 
 .work-item:nth-child(4) {
-  border-top-color: #27ae60;
+  border-top-color: var(--green);
 }
 
 .work-item:hover {
@@ -285,14 +235,14 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin: 0 0 0.5rem 0;
-  color: #2c3e50;
+  color: var(--text-heading);
   text-transform: lowercase;
 }
 
 .company {
   display: inline-block;
-  background: var(--color-accent);
-  color: #2c3e50;
+  background: var(--accent-primary);
+  color: var(--bg-header);
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   font-weight: 600;
@@ -304,7 +254,7 @@
 .duration,
 .location {
   display: inline-block;
-  background: #34495e;
+  background: var(--navy-light);
   color: white;
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
@@ -316,12 +266,12 @@
 .work-description {
   margin: 0;
   line-height: 1.6;
-  color: #2c3e50;
+  color: var(--text-heading);
 }
 
 /* Education Section */
 .education-section {
-  background: #ffffff;
+  background: var(--white);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -334,7 +284,7 @@
 }
 
 .education-item {
-  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
   padding: 1.5rem;
   border-radius: 8px;
   color: white;

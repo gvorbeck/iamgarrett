@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import SectionAside from './SectionAside.vue'
 import { asidePortfolio } from '@/data/asides'
 import SectionHeader from './SectionHeader.vue'
@@ -11,6 +11,26 @@ const isOtherProjectsExpanded = ref(false)
 const toggleOtherProjects = () => {
   isOtherProjectsExpanded.value = !isOtherProjectsExpanded.value
 }
+
+// Helper function to extract starting year from year string
+const getStartingYear = (yearString: string): number => {
+  // Handle ranges like "2023-2024" or "2006-2015"
+  const match = yearString.match(/^(\d{4})/)
+  return match ? parseInt(match[1]) : 0
+}
+
+// Sort projects by year (most recent first)
+const featuredProjects = computed(() => {
+  return portfolio
+    .filter((p) => p.featured)
+    .sort((a, b) => getStartingYear(b.year) - getStartingYear(a.year))
+})
+
+const otherProjects = computed(() => {
+  return portfolio
+    .filter((p) => !p.featured)
+    .sort((a, b) => getStartingYear(b.year) - getStartingYear(a.year))
+})
 </script>
 
 <template>
@@ -26,11 +46,7 @@ const toggleOtherProjects = () => {
     <section class="featured-projects">
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
-        <article
-          v-for="project in portfolio.filter((p) => p.featured)"
-          :key="project.id"
-          class="project-card"
-        >
+        <article v-for="project in featuredProjects" :key="project.id" class="project-card">
           <div class="project-header">
             <div class="title-row">
               <h3>{{ project.title }}</h3>
@@ -89,11 +105,7 @@ const toggleOtherProjects = () => {
         </button>
       </div>
       <div class="projects-list" :class="{ collapsed: !isOtherProjectsExpanded }">
-        <article
-          v-for="project in portfolio.filter((p) => !p.featured)"
-          :key="project.id"
-          class="project-item"
-        >
+        <article v-for="project in otherProjects" :key="project.id" class="project-item">
           <div class="project-info">
             <div class="title-status">
               <h3>{{ project.title }}</h3>
@@ -604,7 +616,7 @@ const toggleOtherProjects = () => {
 .section-title {
   font-size: 2rem;
   font-weight: 900;
-  margin: 0;
+  margin: 0 0 1.5rem;
   color: var(--text-heading);
   text-transform: lowercase;
   border-bottom: 4px solid var(--purple);

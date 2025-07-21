@@ -8,7 +8,7 @@ export const asideResume = {
 
 export const asidePortfolio = {
   title: 'My Work',
-  image: '/public/images/face.webp',
+  image: '/public/images/folder.webp',
   imageAlt: 'Portfolio showcase',
   content:
     "Throughout my career, I've had the privilege of working on diverse projects spanning multiple industries. From enterprise applications to creative digital experiences, each project has challenged me to grow and innovate.",

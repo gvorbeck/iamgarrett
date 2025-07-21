@@ -120,35 +120,6 @@ import AppSection from './AppSection.vue'
 </template>
 
 <style scoped>
-#resume {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-columns: 350px 1fr;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-  color: var(--text-primary);
-}
-
-/* Main Content Styles */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 900;
-  margin: 0 0 1.5rem 0;
-  color: var(--text-heading);
-  text-transform: lowercase;
-  border-bottom: 4px solid var(--accent-primary);
-  padding-bottom: 0.5rem;
-  display: inline-block;
-}
-
 /* Skills Section */
 .skills-section {
   background: var(--white);

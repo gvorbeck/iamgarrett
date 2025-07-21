@@ -30,4 +30,10 @@ defineProps<{
     grid-column: 1 / -1;
   }
 }
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 </style>

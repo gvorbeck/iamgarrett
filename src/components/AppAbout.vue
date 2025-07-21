@@ -2,14 +2,7 @@
 import SectionAside from './SectionAside.vue'
 import SectionHeader from './SectionHeader.vue'
 import AppSection from './AppSection.vue'
-
-const asideAbout = {
-  title: 'Evolution',
-  image: '/images/about.webp',
-  imageAlt: 'Portrait photo',
-  content:
-    'This site represents two decades of growth, experimentation, and technological evolution. From a teenage musical project to a professional showcase, it reflects my journey as both a developer and a person.',
-}
+import { asideAbout } from '@/data/asides'
 </script>
 
 <template>

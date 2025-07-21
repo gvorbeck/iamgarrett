@@ -13,3 +13,11 @@ export const asidePortfolio = {
   content:
     "Throughout my career, I've had the privilege of working on diverse projects spanning multiple industries. From enterprise applications to creative digital experiences, each project has challenged me to grow and innovate.",
 }
+
+export const asideAbout = {
+  title: 'Evolution',
+  image: '/images/about.webp',
+  imageAlt: 'Portrait photo',
+  content:
+    'This site represents two decades of growth, experimentation, and technological evolution. From a teenage musical project to a professional showcase, it reflects my journey as both a developer and a person.',
+}

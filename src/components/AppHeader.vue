@@ -20,7 +20,7 @@ onUnmounted(() => {
   <header :class="{ scrolled: isScrolled }">
     <div class="header-container">
       <div class="logo">
-        <h1>i<span class="highlight">am</span>garrett</h1>
+        <h1>iamgarrett</h1>
       </div>
 
       <div class="navigation-wrapper">
@@ -107,7 +107,36 @@ header.scrolled {
   min-height: 80px;
 }
 
-.logo h1 {
+.logo {
+  color: var(--text-inverse);
+  font-family: 'Merriweather', serif;
+  position: relative;
+
+  h1 {
+    font-weight: bold;
+    position: absolute;
+    font-size: 5rem;
+    top: -2.5rem;
+    line-height: 1;
+
+    &::after {
+      background-color: #fab239;
+      border-radius: 50%;
+      box-shadow:
+        0 3px 6px #00000029,
+        0 3px 6px #0000003b;
+      content: '';
+      height: 100px;
+      left: calc(50% - 50px);
+      position: absolute;
+      top: 0;
+      width: 100px;
+      z-index: -1;
+    }
+  }
+}
+
+/* .logo h1 {
   font-size: 2rem;
   font-weight: 900;
   margin: 0;
@@ -124,7 +153,7 @@ header.scrolled {
   padding: 0.1em 0.3em;
   border-radius: 50%;
   margin: 0 0.1em;
-}
+} */
 
 .navigation-wrapper {
   display: flex;

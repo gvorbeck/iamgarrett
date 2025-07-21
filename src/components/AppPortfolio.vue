@@ -332,6 +332,31 @@ const toggleOtherProjects = () => {
   color: var(--purple-dark);
 }
 
+/* Project link styling with matching accent colors */
+.project-card:nth-child(2) .project-link {
+  color: var(--green);
+}
+
+.project-card:nth-child(2) .project-link:hover {
+  color: var(--green-dark);
+}
+
+.project-card:nth-child(3) .project-link {
+  color: var(--orange);
+}
+
+.project-card:nth-child(3) .project-link:hover {
+  color: var(--orange-dark);
+}
+
+.project-card:nth-child(4) .project-link {
+  color: var(--red);
+}
+
+.project-card:nth-child(4) .project-link:hover {
+  color: var(--red-dark);
+}
+
 /* Other Projects Section */
 .other-projects {
   background: var(--white);
@@ -511,6 +536,31 @@ const toggleOtherProjects = () => {
 
 .quick-link:hover {
   color: var(--purple-dark);
+}
+
+/* Quick link styling with matching accent colors for Other Projects */
+.project-item:nth-child(2n) .quick-link {
+  color: var(--green);
+}
+
+.project-item:nth-child(2n) .quick-link:hover {
+  color: var(--green-dark);
+}
+
+.project-item:nth-child(3n) .quick-link {
+  color: var(--orange);
+}
+
+.project-item:nth-child(3n) .quick-link:hover {
+  color: var(--orange-dark);
+}
+
+.project-item:nth-child(4n) .quick-link {
+  color: var(--blue);
+}
+
+.project-item:nth-child(4n) .quick-link:hover {
+  color: var(--blue-dark);
 }
 
 .project-thumbnail {

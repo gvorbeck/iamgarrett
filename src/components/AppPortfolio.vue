@@ -133,6 +133,40 @@ import { portfolio } from '@/data/portfolio'
   border-top-color: var(--red);
 }
 
+/* Company styling with matching accent colors */
+.project-card .company {
+  background: var(--purple);
+}
+
+.project-card:nth-child(2) .company {
+  background: var(--green);
+}
+
+.project-card:nth-child(3) .company {
+  background: var(--orange);
+}
+
+.project-card:nth-child(4) .company {
+  background: var(--red);
+}
+
+/* Project image borders with matching accent colors */
+.project-card .project-image {
+  border: 2px solid var(--purple);
+}
+
+.project-card:nth-child(2) .project-image {
+  border-color: var(--green);
+}
+
+.project-card:nth-child(3) .project-image {
+  border-color: var(--orange);
+}
+
+.project-card:nth-child(4) .project-image {
+  border-color: var(--red);
+}
+
 .project-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -189,7 +223,6 @@ import { portfolio } from '@/data/portfolio'
 
 .company {
   display: inline-block;
-  background: var(--purple);
   color: white;
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
@@ -303,6 +336,40 @@ import { portfolio } from '@/data/portfolio'
   border-left-color: var(--blue);
 }
 
+/* Company styling with matching accent colors for All Projects */
+.project-item .company {
+  background: var(--purple);
+}
+
+.project-item:nth-child(2n) .company {
+  background: var(--green);
+}
+
+.project-item:nth-child(3n) .company {
+  background: var(--orange);
+}
+
+.project-item:nth-child(4n) .company {
+  background: var(--blue);
+}
+
+/* Thumbnail borders with matching accent colors */
+.project-item .project-thumbnail {
+  border: 2px solid var(--purple);
+}
+
+.project-item:nth-child(2n) .project-thumbnail {
+  border-color: var(--green);
+}
+
+.project-item:nth-child(3n) .project-thumbnail {
+  border-color: var(--orange);
+}
+
+.project-item:nth-child(4n) .project-thumbnail {
+  border-color: var(--blue);
+}
+
 .project-item:hover {
   transform: translateX(4px);
 }
@@ -349,7 +416,6 @@ import { portfolio } from '@/data/portfolio'
 }
 
 .project-details .company {
-  background: var(--purple);
   font-size: 0.8rem;
 }
 

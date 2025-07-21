@@ -7,6 +7,22 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
 }
 
+const smoothScrollTo = (elementId: string, event: Event) => {
+  event.preventDefault()
+
+  const targetElement = document.getElementById(elementId)
+  if (!targetElement) return
+
+  const headerHeight = 120 // Adjust this based on your header height
+  const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset
+  const offsetPosition = elementPosition - headerHeight
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  })
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -26,9 +42,19 @@ onUnmounted(() => {
       <div class="navigation-wrapper">
         <nav class="main-nav">
           <ul>
-            <li><a href="#resume" class="nav-link">Resume</a></li>
-            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
+            <li>
+              <a href="#resume" class="nav-link" @click="smoothScrollTo('resume', $event)"
+                >Resume</a
+              >
+            </li>
+            <li>
+              <a href="#portfolio" class="nav-link" @click="smoothScrollTo('portfolio', $event)"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a href="#about" class="nav-link" @click="smoothScrollTo('about', $event)">About</a>
+            </li>
           </ul>
         </nav>
 
@@ -111,13 +137,20 @@ header.scrolled {
   color: var(--text-inverse);
   font-family: 'Merriweather', serif;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 60px;
 
   h1 {
     font-weight: bold;
-    position: absolute;
-    font-size: 5rem;
-    top: -2.5rem;
+    font-size: clamp(1.5rem, 4vw, 3rem);
     line-height: 1;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    text-align: center;
 
     &::after {
       background-color: #fab239;
@@ -126,34 +159,16 @@ header.scrolled {
         0 3px 6px #00000029,
         0 3px 6px #0000003b;
       content: '';
-      height: 100px;
-      left: calc(50% - 50px);
+      width: clamp(60px, 8vw, 100px);
+      height: clamp(60px, 8vw, 100px);
       position: absolute;
-      top: 0;
-      width: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: -1;
     }
   }
 }
-
-/* .logo h1 {
-  font-size: 2rem;
-  font-weight: 900;
-  margin: 0;
-  color: var(--text-inverse);
-  letter-spacing: -0.02em;
-  text-transform: lowercase;
-}
-
-.logo .highlight {
-  color: var(--accent-primary);
-  font-weight: 900;
-  background: var(--accent-primary);
-  color: var(--bg-header);
-  padding: 0.1em 0.3em;
-  border-radius: 50%;
-  margin: 0 0.1em;
-} */
 
 .navigation-wrapper {
   display: flex;
@@ -232,12 +247,31 @@ header.scrolled {
 }
 
 /* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+}
+
 @media (max-width: 768px) {
   .header-container {
     padding: 1rem;
     flex-direction: column;
     gap: 1rem;
     min-height: auto;
+  }
+
+  .logo {
+    min-width: auto;
+    height: 50px;
+
+    h1 {
+      font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
   }
 
   .navigation-wrapper {
@@ -248,7 +282,13 @@ header.scrolled {
 
   .main-nav ul {
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 
   .social-nav {
@@ -261,19 +301,33 @@ header.scrolled {
   .social-nav ul {
     justify-content: center;
   }
-
-  .logo h1 {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 480px) {
+  .header-container {
+    padding: 0.75rem;
+  }
+
+  .logo {
+    height: 40px;
+
+    h1 {
+      font-size: clamp(1rem, 4vw, 1.4rem);
+
+      &::after {
+        width: clamp(40px, 6vw, 60px);
+        height: clamp(40px, 6vw, 60px);
+      }
+    }
+  }
+
   .main-nav ul {
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .social-link {
@@ -282,8 +336,8 @@ header.scrolled {
   }
 
   .social-link svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 }
 </style>

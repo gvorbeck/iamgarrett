@@ -3,6 +3,7 @@ import SectionAside from './SectionAside.vue'
 import { asideResume } from '@/data/asides'
 import SectionHeader from './SectionHeader.vue'
 import AppSection from './AppSection.vue'
+import { resume } from '@/data/resume'
 </script>
 
 <template>
@@ -18,87 +19,25 @@ import AppSection from './AppSection.vue'
     <section class="skills-section">
       <h2 class="section-title">Skills</h2>
       <ul class="skills-list">
-        <li>
-          <span class="skill-category">Core:</span> HTML, CSS, JavaScript, Git, JSON, XML, some PHP
+        <li v-for="skillGroup in resume.skills" :key="skillGroup.title">
+          <span class="skill-category">{{ skillGroup.title }}:</span>
+          {{ skillGroup.skill.join(', ') }}
         </li>
-        <li>
-          <span class="skill-category">JavaScript Libraries &amp; Frameworks:</span> React, Vue.js,
-          jQuery, D3, TypeScript, Redux
-        </li>
-        <li><span class="skill-category">CSS:</span> Sass, Less, Emotion, Tailwind</li>
-        <li>
-          <span class="skill-category">Design Systems:</span> Carbon, MUI (Material-UI), Ant Design
-        </li>
-        <li><span class="skill-category">Content Management Systems:</span> WordPress, Drupal</li>
-        <li>
-          <span class="skill-category">Database Structure:</span> GraphQL, some MySQL, some SQL
-        </li>
-        <li><span class="skill-category">Methodologies:</span> Agile, Waterfall</li>
       </ul>
     </section>
 
     <section class="work-history-section">
       <h2 class="section-title">Work History</h2>
       <ul class="work-list">
-        <li class="work-item">
+        <li v-for="job in resume.work" :key="job.title + job.company" class="work-item">
           <div class="work-header">
-            <h3>Lead UI Developer</h3>
-            <span class="company">Anywhere Real Estate, Inc.</span>
-            <span class="duration">05/2025 - current</span>
-            <span class="location">Remote</span>
+            <h3>{{ job.title }}</h3>
+            <span class="company">{{ job.company }}</span>
+            <span class="duration">{{ job.duration }}</span>
+            <span class="location">{{ job.location }}</span>
           </div>
           <p class="work-description">
-            As a Lead UI Developer at Anywhere Real Estate, Inc., I am working on their new
-            Universal Platform, working to create seamless experiences for agents, brokers, and
-            consumers in the real estate industry.
-          </p>
-        </li>
-
-        <li class="work-item">
-          <div class="work-header">
-            <h3>Senior Web UI Developer</h3>
-            <span class="company">Lab49</span>
-            <span class="duration">04/2023 - 05/2025</span>
-            <span class="location">New York, NY</span>
-          </div>
-          <p class="work-description">
-            As a Senior Web UI Developer at Lab49, I was responsible for developing and implementing
-            user interfaces for our clients in the financial industry. In this role, I worked
-            closely with clients, project managers, and other team members to understand their
-            requirements and translate them into functional and visually appealing web interfaces.
-          </p>
-        </li>
-
-        <li class="work-item">
-          <div class="work-header">
-            <h3>Advisory Front End Developer / Software Engineer</h3>
-            <span class="company">IBM</span>
-            <span class="duration">10/2015 - 01/2023</span>
-            <span class="location">New York, NY &amp; Remote</span>
-          </div>
-          <p class="work-description">
-            In this role, I worked as a Front End Developer within IBM's Z Design business unit. I
-            worked with the IBM z/OS mainframe platform to bring a modern web experience to some of
-            the most robust mainframe systems in the industry. Whether it was updating the look and
-            feel of their legacy systems, working to create new services, or guiding teams through
-            an ever-updating set of processes; I used my skills to ensure a modern and beautiful
-            interaction every time.
-          </p>
-        </li>
-
-        <li class="work-item">
-          <div class="work-header">
-            <h3>Web Developer/Software Developer</h3>
-            <span class="company">NBCUniversal</span>
-            <span class="duration">10/2006 - 10/2015</span>
-            <span class="location">New York, NY</span>
-          </div>
-          <p class="work-description">
-            In this role, I worked on dozens of NBCUniversal's properties during my time there. I
-            was fortunate to work with several teams, covering brands such as Telemundo, SyFy, USA,
-            Bravo and more. I worked with a variety of technologies that supported millions of
-            users. Working in a rapidly evolving field, I helped foster NBC's web development
-            community.
+            {{ job.description }}
           </p>
         </li>
       </ul>
@@ -107,11 +46,11 @@ import AppSection from './AppSection.vue'
     <section class="education-section">
       <h2 class="section-title">Education</h2>
       <ul class="education-list">
-        <li class="education-item">
+        <li v-for="edu in resume.education" :key="edu.title + edu.school" class="education-item">
           <div class="education-header">
-            <h3>Bachelor of Science in Computer Science</h3>
-            <span class="school">New Jersey City University</span>
-            <span class="duration">1/2006 - 6/2010</span>
+            <h3>{{ edu.title }}</h3>
+            <span class="school">{{ edu.school }}</span>
+            <span class="duration">{{ edu.duration }}</span>
           </div>
         </li>
       </ul>

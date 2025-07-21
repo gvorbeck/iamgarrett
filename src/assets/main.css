@@ -1,5 +1,10 @@
 @import './base.css';
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* Account for fixed header */
+}
+
 body {
   background-color: var(--gray-light);
 

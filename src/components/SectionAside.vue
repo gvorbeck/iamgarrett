@@ -3,6 +3,7 @@ import type { Aside } from '@/data/definitions'
 
 defineProps<{
   aside: Aside
+  colorScheme?: 'blue' | 'purple' | 'green' | 'orange'
 }>()
 </script>
 
@@ -10,7 +11,7 @@ defineProps<{
   <aside class="sidebar">
     <div class="card">
       <img class="image" :alt="aside.imageAlt" :src="aside.image" />
-      <div class="info">
+      <div class="info" :class="colorScheme || 'blue'">
         <h2>{{ aside.title }}</h2>
         <p>
           {{ aside.content }}
@@ -44,8 +45,23 @@ defineProps<{
 
 .info {
   padding: 2rem;
-  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
   color: white;
+}
+
+.info.blue {
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+}
+
+.info.purple {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+}
+
+.info.green {
+  background: linear-gradient(135deg, var(--green), #2d5f41);
+}
+
+.info.orange {
+  background: linear-gradient(135deg, var(--orange), #d4690a);
 }
 
 .info h2 {

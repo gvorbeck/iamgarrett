@@ -13,7 +13,7 @@ import { resume } from '@/data/resume'
     </template>
 
     <template #aside>
-      <SectionAside :aside="asideResume" />
+      <SectionAside :aside="asideResume" colorScheme="blue" />
     </template>
 
     <section class="skills-section">

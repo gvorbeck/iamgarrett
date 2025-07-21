@@ -32,7 +32,7 @@ export const resume = {
   work: [
     {
       title: 'Lead UI Developer',
-      company: 'Anywhere Real Estate, Inc.',
+      company: 'Anywhere Real Estate',
       duration: '05/2025 - current',
       location: 'Remote',
       description:

@@ -1,11 +1,12 @@
 <script setup lang="ts">
 defineProps<{
   id: string
+  reverseLayout?: boolean
 }>()
 </script>
 
 <template>
-  <div :id="id" class="app-section">
+  <div :id="id" class="app-section" :class="{ reverse: reverseLayout }">
     <header>
       <slot name="header" />
     </header>
@@ -31,9 +32,37 @@ defineProps<{
   }
 }
 
+.app-section.reverse {
+  grid-template-columns: 1fr 350px;
+
+  aside {
+    order: 2;
+  }
+
+  .main-content {
+    order: 1;
+  }
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .app-section,
+  .app-section.reverse {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .app-section.reverse aside,
+  .app-section.reverse .main-content {
+    order: unset;
+  }
 }
 </style>

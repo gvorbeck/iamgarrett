@@ -1,7 +1,430 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SectionAside from './SectionAside.vue'
+import { asidePortfolio } from '@/data/asides'
+import SectionHeader from './SectionHeader.vue'
+import AppSection from './AppSection.vue'
+import { portfolio } from '@/data/portfolio'
+</script>
 
 <template>
-  <div id="portfolio">portfolio</div>
+  <AppSection id="portfolio" :reverseLayout="true">
+    <template #header>
+      <SectionHeader title="Portfolio" />
+    </template>
+
+    <template #aside>
+      <SectionAside :aside="asidePortfolio" colorScheme="purple" />
+    </template>
+
+    <section class="featured-projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <article
+          v-for="project in portfolio.filter((p) => p.featured)"
+          :key="project.id"
+          class="project-card"
+        >
+          <div class="project-header">
+            <div class="title-row">
+              <h3>{{ project.title }}</h3>
+              <span v-if="project.status" class="status-badge" :class="project.status">
+                {{
+                  project.status === 'in-development'
+                    ? 'In Progress'
+                    : project.status === 'live'
+                      ? 'Live'
+                      : 'Archived'
+                }}
+              </span>
+            </div>
+            <div class="project-meta">
+              <span class="company">{{ project.company }}</span>
+              <span class="year">{{ project.year }}</span>
+            </div>
+          </div>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="technologies">
+            <span v-for="tech in project.technologies" :key="tech" class="tech-tag">{{
+              tech
+            }}</span>
+          </div>
+          <div v-if="project.link" class="project-actions">
+            <a :href="project.link" target="_blank" rel="noopener" class="project-link">
+              View Project →
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="all-projects">
+      <h2 class="section-title">All Projects</h2>
+      <div class="projects-list">
+        <article v-for="project in portfolio" :key="project.id" class="project-item">
+          <div class="project-info">
+            <div class="title-status">
+              <h3>{{ project.title }}</h3>
+              <span v-if="project.status" class="status-indicator" :class="project.status"></span>
+            </div>
+            <div class="project-details">
+              <span class="company">{{ project.company }}</span>
+              <span class="separator">•</span>
+              <span class="year">{{ project.year }}</span>
+              <a
+                v-if="project.link"
+                :href="project.link"
+                target="_blank"
+                rel="noopener"
+                class="quick-link"
+              >
+                →
+              </a>
+            </div>
+            <p class="description">{{ project.description }}</p>
+            <div class="tech-list">
+              <span v-for="tech in project.technologies" :key="tech" class="tech">{{ tech }}</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </AppSection>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* Featured Projects Section */
+.featured-projects {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.project-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border-top: 4px solid var(--purple);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-card:nth-child(2) {
+  border-top-color: var(--green);
+}
+
+.project-card:nth-child(3) {
+  border-top-color: var(--orange);
+}
+
+.project-card:nth-child(4) {
+  border-top-color: var(--red);
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-header {
+  margin-bottom: 1rem;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.project-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-heading);
+  text-transform: lowercase;
+}
+
+.status-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.live {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.in-development {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.archived {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.project-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  display: inline-block;
+  background: var(--purple);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: lowercase;
+}
+
+.year {
+  display: inline-block;
+  background: var(--navy-light);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.project-description {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  color: var(--text-heading);
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: var(--gray-light);
+  color: var(--text-heading);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--gray-medium);
+}
+
+.project-actions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--purple-dark);
+}
+
+/* All Projects Section */
+.all-projects {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--purple);
+  transition: transform 0.2s ease;
+}
+
+.project-item:nth-child(2n) {
+  border-left-color: var(--green);
+}
+
+.project-item:nth-child(3n) {
+  border-left-color: var(--orange);
+}
+
+.project-item:nth-child(4n) {
+  border-left-color: var(--blue);
+}
+
+.project-item:hover {
+  transform: translateX(4px);
+}
+
+.project-info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-heading);
+  text-transform: lowercase;
+}
+
+.title-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-indicator.live {
+  background: #28a745;
+}
+
+.status-indicator.in-development {
+  background: #ffc107;
+}
+
+.status-indicator.archived {
+  background: #6c757d;
+}
+
+.project-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-details .company {
+  background: var(--purple);
+  font-size: 0.8rem;
+}
+
+.separator {
+  color: var(--text-muted);
+}
+
+.project-details .year {
+  background: var(--navy-light);
+  font-size: 0.8rem;
+}
+
+.quick-link {
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.quick-link:hover {
+  color: var(--purple-dark);
+}
+
+.description {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  color: var(--text-heading);
+  font-size: 0.95rem;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tech {
+  background: var(--gray-light);
+  color: var(--text-muted);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem 0;
+  color: var(--text-heading);
+  text-transform: lowercase;
+  border-bottom: 4px solid var(--purple);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .featured-projects,
+  .all-projects {
+    padding: 1.5rem;
+  }
+
+  .project-card,
+  .project-item {
+    padding: 1rem;
+  }
+
+  .project-header h3,
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .company,
+  .year {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+
+  .project-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .separator {
+    display: none;
+  }
+}
+</style>

@@ -5,3 +5,11 @@ export const asideResume = {
   content:
     "I'm a web developer based in the NYC area with 15+ years of experience. I love to draw, eat pizza, and listen to bad music. I have a dog named Poori. I have been to all 50 states.",
 }
+
+export const asidePortfolio = {
+  title: 'My Work',
+  image: '/public/images/face.webp',
+  imageAlt: 'Portfolio showcase',
+  content:
+    "Throughout my career, I've had the privilege of working on diverse projects spanning multiple industries. From enterprise applications to creative digital experiences, each project has challenged me to grow and innovate.",
+}

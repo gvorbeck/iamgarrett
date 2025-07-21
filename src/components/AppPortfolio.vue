@@ -1,9 +1,16 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import SectionAside from './SectionAside.vue'
 import { asidePortfolio } from '@/data/asides'
 import SectionHeader from './SectionHeader.vue'
 import AppSection from './AppSection.vue'
 import { portfolio } from '@/data/portfolio'
+
+const isOtherProjectsExpanded = ref(false)
+
+const toggleOtherProjects = () => {
+  isOtherProjectsExpanded.value = !isOtherProjectsExpanded.value
+}
 </script>
 
 <template>
@@ -60,10 +67,33 @@ import { portfolio } from '@/data/portfolio'
       </div>
     </section>
 
-    <section class="all-projects">
-      <h2 class="section-title">All Projects</h2>
-      <div class="projects-list">
-        <article v-for="project in portfolio" :key="project.id" class="project-item">
+    <section class="other-projects">
+      <div class="other-projects-header">
+        <h2 class="section-title">Other Projects</h2>
+        <button
+          @click="toggleOtherProjects"
+          class="toggle-button"
+          :class="{ expanded: isOtherProjectsExpanded }"
+        >
+          <span>{{ isOtherProjectsExpanded ? 'Show Less' : 'Show More' }}</span>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            class="toggle-icon"
+            :class="{ rotated: isOtherProjectsExpanded }"
+          >
+            <path d="M8 12l-4-4h8l-4 4z" />
+          </svg>
+        </button>
+      </div>
+      <div class="projects-list" :class="{ collapsed: !isOtherProjectsExpanded }">
+        <article
+          v-for="project in portfolio.filter((p) => !p.featured)"
+          :key="project.id"
+          class="project-item"
+        >
           <div class="project-info">
             <div class="title-status">
               <h3>{{ project.title }}</h3>
@@ -302,18 +332,61 @@ import { portfolio } from '@/data/portfolio'
   color: var(--purple-dark);
 }
 
-/* All Projects Section */
-.all-projects {
+/* Other Projects Section */
+.other-projects {
   background: var(--white);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.other-projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-button:hover {
+  background: var(--purple-dark);
+  transform: translateY(-1px);
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
 .projects-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-height: none;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.projects-list.collapsed {
+  max-height: 0;
+  gap: 0;
 }
 
 .project-item {
@@ -336,7 +409,7 @@ import { portfolio } from '@/data/portfolio'
   border-left-color: var(--blue);
 }
 
-/* Company styling with matching accent colors for All Projects */
+/* Company styling with matching accent colors for Other Projects */
 .project-item .company {
   background: var(--purple);
 }
@@ -481,7 +554,7 @@ import { portfolio } from '@/data/portfolio'
 .section-title {
   font-size: 2rem;
   font-weight: 900;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   color: var(--text-heading);
   text-transform: lowercase;
   border-bottom: 4px solid var(--purple);
@@ -489,10 +562,14 @@ import { portfolio } from '@/data/portfolio'
   display: inline-block;
 }
 
+.other-projects-header .section-title {
+  margin-bottom: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .featured-projects,
-  .all-projects {
+  .other-projects {
     padding: 1.5rem;
   }
 
@@ -521,6 +598,16 @@ import { portfolio } from '@/data/portfolio'
 
   .project-thumbnail {
     max-width: 100%;
+  }
+
+  .other-projects-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .toggle-button {
+    justify-content: center;
   }
 }
 

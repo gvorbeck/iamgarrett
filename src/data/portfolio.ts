@@ -23,6 +23,7 @@ export const portfolio: PortfolioItem[] = [
     technologies: ['React', 'TypeScript', 'Vite', 'Redux', 'Vanilla CSS'],
     featured: true,
     status: 'in-development',
+    link: 'https://www.bhgre.com/',
   },
   {
     id: 'lab49-fintech',
@@ -64,7 +65,6 @@ export const portfolio: PortfolioItem[] = [
     description:
       'Built and maintained web properties for major NBC brands including SyFy, USA, Bravo, and Telemundo. Supported millions of daily users with scalable frontend architecture.',
     technologies: ['JavaScript', 'jQuery', 'PHP', 'CSS', 'WordPress'],
-    featured: true,
     status: 'archived',
   },
   {
@@ -95,9 +95,11 @@ export const portfolio: PortfolioItem[] = [
     year: '2023',
     image: '/images/portfolio-codex-quest.webp',
     description:
-      'Interactive coding adventure game that teaches programming concepts through engaging quests and challenges.',
-    technologies: ['JavaScript', 'HTML5 Canvas', 'CSS', 'Game Development'],
+      'Created a React-based character management ecosystem for the Basic Fantasy Role-Playing Game, an open-source tabletop RPG system. Engineered both player-facing tools for character creation and progression tracking, and game master utilities including bestiary management and real-time combat tracking. Successfully scaled the platform to serve 800+ users globally, fostering an active community of tabletop gaming enthusiasts.',
+    technologies: ['React', 'Tailwind', 'Ant Design', 'Firebase'],
+    link: 'https://codex.quest',
     status: 'live',
+    featured: true,
   },
   {
     id: 'glyph-quest',
@@ -119,17 +121,6 @@ export const portfolio: PortfolioItem[] = [
     description:
       'Music review and discovery platform featuring user-generated content and collaborative playlists.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Spotify API'],
-    status: 'archived',
-  },
-  {
-    id: 'portfolio-optimizer',
-    title: 'Portfolio Optimizer',
-    company: 'Personal Project',
-    year: '2020',
-    image: '/images/portfolio-portfolio-optimizer.webp',
-    description:
-      'Financial portfolio analysis tool with real-time data visualization and investment recommendations.',
-    technologies: ['Python', 'Flask', 'D3.js', 'Financial APIs'],
     status: 'archived',
   },
   {

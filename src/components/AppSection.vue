@@ -32,12 +32,12 @@ defineProps<{
     grid-column: 1 / -1;
     grid-row: 1;
   }
-  
+
   aside {
     grid-column: 1;
     grid-row: 2;
   }
-  
+
   .main-content {
     grid-column: 2;
     grid-row: 2;
@@ -46,12 +46,12 @@ defineProps<{
 
 .app-section.reverse {
   grid-template-columns: 1fr 350px;
-  
+
   aside {
     grid-column: 2;
     grid-row: 2;
   }
-  
+
   .main-content {
     grid-column: 1;
     grid-row: 2;
@@ -81,12 +81,12 @@ defineProps<{
   .app-section.reverse .main-content {
     grid-column: 1;
   }
-  
+
   .app-section aside,
   .app-section.reverse aside {
     grid-row: 2;
   }
-  
+
   .app-section .main-content,
   .app-section.reverse .main-content {
     grid-row: 3;

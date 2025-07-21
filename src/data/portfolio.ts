@@ -16,10 +16,10 @@ export const portfolio: PortfolioItem[] = [
     id: 'anywhere-platform',
     title: 'Universal Platform',
     company: 'Anywhere Real Estate',
-    year: '2024-Present',
+    year: '2025',
     description:
-      'Leading the development of a comprehensive real estate platform that unifies agent, broker, and consumer experiences. Built with modern React architecture and scalable design systems.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'GraphQL', 'Design Systems'],
+      "I helped build a unified web platform for Anywhere Realty's franchise network, consolidating multiple real estate brands into a single codebase while enabling extensive brand customization. The solution maintained each brand's visual identity and user experience while significantly reducing development complexity and maintenance costs.",
+    technologies: ['React', 'TypeScript', 'Vite', 'Redux', 'Vanilla CSS'],
     featured: true,
     status: 'in-development',
   },

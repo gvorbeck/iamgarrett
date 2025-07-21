@@ -39,7 +39,7 @@ onUnmounted(() => {
                 href="https://linkedin.com/in/garrett-vorbeck"
                 target="_blank"
                 rel="noopener"
-                class="social-link"
+                class="social-link linkedin"
                 aria-label="LinkedIn"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -54,7 +54,7 @@ onUnmounted(() => {
                 href="https://github.com/garrett-vorbeck"
                 target="_blank"
                 rel="noopener"
-                class="social-link"
+                class="social-link github"
                 aria-label="GitHub"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -65,7 +65,7 @@ onUnmounted(() => {
               </a>
             </li>
             <li>
-              <a href="mailto:garrett@example.com" class="social-link" aria-label="Email">
+              <a href="mailto:garrett@example.com" class="social-link email" aria-label="Email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"
@@ -87,16 +87,14 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(15, 15, 15, 0.9);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(250, 178, 57, 0.1);
+  background: #2c3e50;
+  border-bottom: 4px solid var(--color-accent);
   transition: all 0.3s ease;
 }
 
 header.scrolled {
-  background: rgba(10, 10, 10, 0.95);
-  box-shadow: 0 2px 30px rgba(250, 178, 57, 0.1);
-  border-bottom-color: rgba(250, 178, 57, 0.2);
+  background: #34495e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .header-container {
@@ -110,17 +108,22 @@ header.scrolled {
 }
 
 .logo h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 900;
   margin: 0;
   color: #ffffff;
   letter-spacing: -0.02em;
+  text-transform: lowercase;
 }
 
 .logo .highlight {
   color: var(--color-accent);
-  font-weight: 400;
-  text-shadow: 0 0 10px rgba(250, 178, 57, 0.3);
+  font-weight: 900;
+  background: var(--color-accent);
+  color: #2c3e50;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  margin: 0 0.1em;
 }
 
 .navigation-wrapper {
@@ -135,43 +138,27 @@ header.scrolled {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-link {
   text-decoration: none;
-  color: var(--color-text);
-  font-weight: 500;
-  font-size: 0.95rem;
-  position: relative;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
-  transition: width 0.3s ease;
-  box-shadow: 0 0 8px rgba(250, 178, 57, 0.4);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: lowercase;
+  padding: 0.6rem 1.2rem;
+  background: #34495e;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
 }
 
 .nav-link:hover {
-  color: var(--color-accent);
-  text-shadow: 0 0 8px rgba(250, 178, 57, 0.3);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.social-nav {
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  padding-left: 2rem;
+  background: var(--color-accent);
+  color: #2c3e50;
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 .social-nav ul {
@@ -182,21 +169,29 @@ header.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(250, 178, 57, 0.1);
-  color: var(--color-accent);
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  color: #ffffff;
   text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(250, 178, 57, 0.2);
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.social-link.linkedin {
+  background: #0077b5;
+}
+
+.social-link.github {
+  background: #333333;
+}
+
+.social-link.email {
+  background: #e74c3c;
 }
 
 .social-link:hover {
-  background: var(--color-accent);
-  color: #0a0a0a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(250, 178, 57, 0.4);
+  transform: translateY(-3px) scale(1.05);
 }
 
 .social-link svg {

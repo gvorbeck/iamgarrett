@@ -50,24 +50,6 @@
   --section-gap: 160px;
 }
 
-/* Light mode override (optional, keeping dark as default) */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-background: var(--vt-c-white);
-    --color-background-soft: var(--vt-c-white-soft);
-    --color-background-mute: var(--vt-c-white-mute);
-
-    --color-border: rgba(0, 0, 0, 0.1);
-    --color-border-hover: rgba(0, 0, 0, 0.2);
-
-    --color-heading: var(--vt-c-black);
-    --color-text: var(--vt-c-black-soft);
-    --color-accent: var(--vt-c-yellow-dark);
-    --color-accent-soft: var(--vt-c-yellow);
-    --color-accent-hover: var(--vt-c-yellow-soft);
-  }
-}
-
 *,
 *::before,
 *::after {

@@ -17,6 +17,7 @@ export const portfolio: PortfolioItem[] = [
     title: 'Universal Platform',
     company: 'Anywhere Real Estate',
     year: '2025',
+    image: '/images/portfolio-univ-web.webp',
     description:
       "I helped build a unified web platform for Anywhere Realty's franchise network, consolidating multiple real estate brands into a single codebase while enabling extensive brand customization. The solution maintained each brand's visual identity and user experience while significantly reducing development complexity and maintenance costs.",
     technologies: ['React', 'TypeScript', 'Vite', 'Redux', 'Vanilla CSS'],
@@ -25,12 +26,13 @@ export const portfolio: PortfolioItem[] = [
   },
   {
     id: 'lab49-fintech',
-    title: 'Financial Trading Interfaces',
+    title: 'Portfolio Optimizer',
     company: 'Lab49',
-    year: '2023-2025',
+    year: '2023-2024',
+    image: '/images/portfolio-portfolio-optimizer.webp',
     description:
-      'Developed sophisticated trading interfaces and financial dashboards for tier-1 investment banks. Focused on real-time data visualization and ultra-low latency user interactions.',
-    technologies: ['React', 'D3.js', 'WebSockets', 'TypeScript', 'Material-UI'],
+      "Developed the frontend for T. Rowe Price's comprehensive portfolio management platform, a year-long greenfield project serving their clients. Created interactive interfaces for asset allocation planning, risk assessment visualization, and automated rebalancing guidance. Transformed complex financial algorithms into an accessible, user-friendly experience that empowers individual clients to make informed investment decisions.",
+    technologies: ['React', 'Redux', 'Tailwind', 'TypeScript', 'Beacon', 'Storybook', 'Jest'],
     featured: true,
     status: 'live',
   },
@@ -39,6 +41,7 @@ export const portfolio: PortfolioItem[] = [
     title: 'Mainframe Modernization',
     company: 'IBM',
     year: '2015-2023',
+    image: '/images/portfolio-ibm-z.webp',
     description:
       "Transformed legacy z/OS mainframe interfaces into modern web experiences. Created design systems and component libraries used across IBM's enterprise mainframe portfolio.",
     technologies: ['React', 'Carbon Design System', 'IBM z/OS', 'Node.js', 'Sass'],
@@ -75,6 +78,61 @@ export const portfolio: PortfolioItem[] = [
     description:
       'Reusable component libraries and design systems built for multiple organizations. Focused on accessibility, consistency, and developer experience.',
     technologies: ['React', 'Storybook', 'Sass', 'TypeScript', 'Jest'],
+    status: 'live',
+  },
+  {
+    id: 'codex-quest',
+    title: 'Codex Quest',
+    company: 'Personal Project',
+    year: '2023',
+    image: '/images/portfolio-codex-quest.webp',
+    description:
+      'Interactive coding adventure game that teaches programming concepts through engaging quests and challenges.',
+    technologies: ['JavaScript', 'HTML5 Canvas', 'CSS', 'Game Development'],
+    status: 'live',
+  },
+  {
+    id: 'glyph-quest',
+    title: 'Glyph Quest',
+    company: 'Personal Project',
+    year: '2022',
+    image: '/images/portfolio-glyph-quest.webp',
+    description:
+      'Typography-focused puzzle game exploring the art and science of letterforms and font design.',
+    technologies: ['JavaScript', 'Canvas API', 'Web Fonts', 'CSS'],
+    status: 'live',
+  },
+  {
+    id: 'opinions-on-music',
+    title: 'Opinions on Music',
+    company: 'Personal Project',
+    year: '2021',
+    image: '/images/portfolio-opinions-on-music.webp',
+    description:
+      'Music review and discovery platform featuring user-generated content and collaborative playlists.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Spotify API'],
+    status: 'archived',
+  },
+  {
+    id: 'portfolio-optimizer',
+    title: 'Portfolio Optimizer',
+    company: 'Personal Project',
+    year: '2020',
+    image: '/images/portfolio-portfolio-optimizer.webp',
+    description:
+      'Financial portfolio analysis tool with real-time data visualization and investment recommendations.',
+    technologies: ['Python', 'Flask', 'D3.js', 'Financial APIs'],
+    status: 'archived',
+  },
+  {
+    id: 'roll-alone',
+    title: 'Roll Alone',
+    company: 'Personal Project',
+    year: '2019',
+    image: '/images/portfolio-roll-alone.webp',
+    description:
+      'Solo tabletop RPG companion app with dice rolling, character management, and story generation.',
+    technologies: ['JavaScript', 'Local Storage', 'Progressive Web App'],
     status: 'live',
   },
 ]

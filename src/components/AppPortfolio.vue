@@ -42,6 +42,9 @@ import { portfolio } from '@/data/portfolio'
               <span class="year">{{ project.year }}</span>
             </div>
           </div>
+          <div v-if="project.image" class="project-image">
+            <img :src="project.image" :alt="`Screenshot of ${project.title}`" />
+          </div>
           <p class="project-description">{{ project.description }}</p>
           <div class="technologies">
             <span v-for="tech in project.technologies" :key="tech" class="tech-tag">{{
@@ -79,6 +82,9 @@ import { portfolio } from '@/data/portfolio'
               >
                 →
               </a>
+            </div>
+            <div v-if="project.image" class="project-thumbnail">
+              <img :src="project.image" :alt="`Screenshot of ${project.title}`" />
             </div>
             <p class="description">{{ project.description }}</p>
             <div class="tech-list">
@@ -199,6 +205,26 @@ import { portfolio } from '@/data/portfolio'
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   font-size: 0.85rem;
+}
+
+.project-image {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  max-width: 20rem;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
 }
 
 .project-description {
@@ -348,6 +374,21 @@ import { portfolio } from '@/data/portfolio'
   color: var(--purple-dark);
 }
 
+.project-thumbnail {
+  margin: 1rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+}
+
 .description {
   margin: 0 0 1rem 0;
   line-height: 1.6;
@@ -406,6 +447,14 @@ import { portfolio } from '@/data/portfolio'
 
   .section-title {
     font-size: 1.5rem;
+  }
+
+  .project-image {
+    margin: 1rem 0;
+  }
+
+  .project-thumbnail {
+    max-width: 100%;
   }
 }
 

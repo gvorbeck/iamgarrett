@@ -43,8 +43,16 @@ export const portfolio: PortfolioItem[] = [
     year: '2015-2023',
     image: '/images/portfolio-ibm-z.webp',
     description:
-      "Transformed legacy z/OS mainframe interfaces into modern web experiences. Created design systems and component libraries used across IBM's enterprise mainframe portfolio.",
-    technologies: ['React', 'Carbon Design System', 'IBM z/OS', 'Node.js', 'Sass'],
+      "Spearheaded a multi-year frontend modernization campaign for IBM's Z mainframe platform, the backbone of global financial infrastructure. Led development across diverse system components—Hardware Management Console, Container Pricing, HMC Mobile, and Trusted Key Entry—transforming legacy interfaces into intuitive, modern experiences. This comprehensive effort bridged decades of technology evolution, enabling next-generation system administrators to efficiently manage mission-critical systems at major financial institutions worldwide.",
+    technologies: [
+      'React',
+      'Carbon Design System',
+      'IBM z/OS',
+      'Storybook',
+      'Sass',
+      'Gatsby',
+      'Mustache',
+    ],
     featured: true,
     status: 'live',
   },

@@ -50,12 +50,12 @@ npm run lint
 
 ## Deployment
 
-This site is automatically deployed to GitHub Pages using GitHub Actions. The workflow is triggered on every push to the `main` branch.
+This site is automatically deployed to GitHub Pages using GitHub Actions. The workflow is triggered on every push to the `master` branch.
 
 ### Manual Deployment Setup
 
 1. Ensure your repository settings have Pages configured to use "GitHub Actions" as the source
-2. Push your changes to the `main` branch
+2. Push your changes to the `master` branch
 3. The GitHub Action will automatically build and deploy your site
 
 ### Local Preview of Production Build

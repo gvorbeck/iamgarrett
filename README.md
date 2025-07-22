@@ -1,6 +1,14 @@
 # iamgarrett-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern Vue.js portfolio website built with TypeScript, showcasing professional projects and experience.
+
+## Tech Stack
+
+- **Vue.js 3** with Composition API
+- **TypeScript** for type safety
+- **Vite** for fast development and optimized builds
+- **Modern CSS** with Grid, Flexbox, and CSS Variables
+- **GitHub Actions** for automated deployment
 
 ## Recommended IDE Setup
 
@@ -9,10 +17,6 @@ This template should help get you started developing with Vue 3 in Vite.
 ## Type Support for `.vue` Imports in TS
 
 TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Project Setup
 
@@ -42,4 +46,21 @@ npm run test:unit
 
 ```sh
 npm run lint
+```
+
+## Deployment
+
+This site is automatically deployed to GitHub Pages using GitHub Actions. The workflow is triggered on every push to the `main` branch.
+
+### Manual Deployment Setup
+
+1. Ensure your repository settings have Pages configured to use "GitHub Actions" as the source
+2. Push your changes to the `main` branch
+3. The GitHub Action will automatically build and deploy your site
+
+### Local Preview of Production Build
+
+```sh
+npm run build
+npm run preview
 ```

@@ -38,15 +38,14 @@ import { asideAbout } from '@/data/asides'
           The styling approach uses modern <strong>CSS</strong> features including CSS Grid,
           Flexbox, and custom properties (CSS variables) for consistent theming. The design
           implements responsive layouts that adapt seamlessly across devices, from mobile phones to
-          desktop displays. Performance optimizations include lazy loading, efficient asset
-          bundling, and semantic HTML for accessibility.
+          desktop displays.
         </p>
 
         <p>
-          The development workflow incorporates <strong>ESLint</strong> for code quality,
-          <strong>Prettier</strong> for consistent formatting, and <strong>Vitest</strong> for unit
-          testing. The component architecture follows Vue.js best practices with clear separation of
-          concerns, reusable components, and maintainable code patterns.
+          The development workflow incorporates <strong>ESLint</strong> for code quality and
+          <strong>Prettier</strong> for consistent formatting. The component architecture follows
+          Vue.js best practices with clear separation of concerns, reusable components, and
+          maintainable code patterns.
         </p>
 
         <p>

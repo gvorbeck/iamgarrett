@@ -20,7 +20,7 @@ export const portfolio: PortfolioItem[] = [
     image: '/images/portfolio-univ-web.webp',
     description:
       "I helped build a unified web platform for Anywhere Realty's franchise network, consolidating multiple real estate brands into a single codebase while enabling extensive brand customization. The solution maintained each brand's visual identity and user experience while significantly reducing development complexity and maintenance costs.",
-    technologies: ['React', 'TypeScript', 'Vite', 'Redux', 'Vanilla CSS'],
+    technologies: ['React', 'TypeScript', 'Vite', 'Redux', 'CSS'],
     featured: true,
     status: 'in-development',
     link: 'https://www.bhgre.com/',

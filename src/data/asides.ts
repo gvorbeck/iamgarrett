@@ -3,7 +3,7 @@ export const asideResume = {
   image: '/images/face.webp',
   imageAlt: 'My cartoon face',
   content:
-    "I'm a web developer based in the NYC area with 15+ years of experience. I love to draw, eat pizza, and listen to bad music. I have a dog named Poori. I have been to all 50 states.",
+    "I'm a web developer based in the NYC area with 15+ years of experience. I love to play ttrpgs, eat pizza, and listen to weird music. I have a dog named Poori. I have been to all 50 states.",
 }
 
 export const asidePortfolio = {

@@ -648,6 +648,7 @@ const otherProjects = computed(() => {
   .project-meta {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: flex-start;
   }
 
   .section-title {

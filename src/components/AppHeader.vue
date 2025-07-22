@@ -173,6 +173,7 @@ header.scrolled {
 .navigation-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -275,7 +276,6 @@ header.scrolled {
   }
 
   .navigation-wrapper {
-    flex-direction: column;
     gap: 1rem;
     width: 100%;
   }
@@ -289,13 +289,6 @@ header.scrolled {
   .nav-link {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
-  }
-
-  .social-nav {
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-left: 0;
-    padding-top: 1rem;
   }
 
   .social-nav ul {

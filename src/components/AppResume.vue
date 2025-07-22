@@ -231,13 +231,8 @@ import { resume } from '@/data/resume'
   #resume {
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin: 1rem auto;
+    margin: 3rem auto 1rem;
     padding: 0 1rem;
-  }
-
-  .sidebar {
-    position: static;
-    order: 2;
   }
 
   .main-content {

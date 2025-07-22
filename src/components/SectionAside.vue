@@ -75,4 +75,11 @@ defineProps<{
   margin: 0;
   font-size: 0.95rem;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    order: 2;
+  }
+}
 </style>

@@ -1,15 +1,4 @@
-export interface PortfolioItem {
-  id: string
-  title: string
-  company: string
-  year: string
-  description: string
-  technologies: string[]
-  link?: string
-  image?: string
-  featured?: boolean
-  status?: 'live' | 'archived' | 'in-development'
-}
+import type { PortfolioItem } from './definitions'
 
 export const portfolio: PortfolioItem[] = [
   {

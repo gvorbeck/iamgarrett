@@ -135,6 +135,6 @@ export const portfolio: PortfolioItem[] = [
       "Created a comprehensive dark theme for Obsidian note-taking software inspired by 80's retro-futuristic aesthetics and vintage computer terminals. Designed an immersive experience that transforms Obsidian into an aging starship's terminal interface, complete with CRT monitor effects, scanlines, and glowing text animations. The theme features authentic terminal typography with VT323 monospace font, a carefully crafted amber/green color palette, and cyberpunk-styled interface elements including animated horizontal rules, prefixed headings, and a persistent terminal status indicator.",
     technologies: ['CSS'],
     status: 'live',
-    link: 'https://github.com/gvorbeck/Nostromo',
+    link: 'https://publish.obsidian.md/hub/02+-+Community+Expansions/02.05+All+Community+Expansions/Themes/Nostromo',
   },
 ]

@@ -3,7 +3,18 @@ export const resume = {
     { title: 'Core Languages', skill: ['HTML', 'CSS', 'JavaScript', 'PHP'] },
     {
       title: 'Frontend Frameworks & Libraries',
-      skill: ['React', 'Vue.js', 'Angular', 'jQuery', 'D3', 'Redux', 'Next.js', 'Gatsby'],
+      skill: [
+        'React',
+        'Vue.js',
+        'Angular',
+        'jQuery',
+        'D3',
+        'Redux',
+        'Next.js',
+        'Gatsby',
+        'TanStack Query',
+        'Zustand',
+      ],
     },
     {
       title: 'CSS & Styling',

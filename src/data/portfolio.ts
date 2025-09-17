@@ -69,11 +69,11 @@ export const portfolio: PortfolioItem[] = [
     id: 'codex-quest',
     title: 'Codex Quest',
     company: 'Personal Project',
-    year: '2024',
+    year: '2023-current',
     image: '/images/portfolio-codex-quest.webp',
     description:
       'Created a React-based character management ecosystem for the Basic Fantasy Role-Playing Game, an open-source tabletop RPG system. Engineered both player-facing tools for character creation and progression tracking, and game master utilities including bestiary management and real-time combat tracking. Successfully scaled the platform to serve 800+ users globally, fostering an active community of tabletop gaming enthusiasts.',
-    technologies: ['React', 'Tailwind', 'Ant Design', 'Firebase', 'Vite', 'Vitest'],
+    technologies: ['React', 'Tailwind', 'Firebase', 'Vite', 'TanStack Query', 'Zustand'],
     link: 'https://codex.quest',
     status: 'live',
     featured: true,
